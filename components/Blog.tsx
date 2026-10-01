@@ -36,13 +36,13 @@ export default function Blog() {
               className="group glass flex flex-col overflow-hidden rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:border-electric/40 hover:shadow-glow"
             >
               {/* Cover */}
-              <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
+              <div className="relative aspect-[4/5] overflow-hidden bg-slate-100">
                 <Image
                   src={post.image}
                   alt={post.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
                 <span className="absolute left-4 top-4 rounded-full border border-electric/25 bg-white/90 px-3 py-1 font-heading text-[11px] font-semibold uppercase tracking-wider text-electric shadow-sm backdrop-blur-md">
                   {post.category}

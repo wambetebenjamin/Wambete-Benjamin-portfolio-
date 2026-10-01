@@ -7,7 +7,7 @@ import { WhatsAppIcon } from "@/components/icons";
 
 /**
  * Floating WhatsApp chat button (bottom-right):
- * green circle + pulsing ring, expands to "Chat with me 💬" on hover,
+ * green circle + pulsing ring, expands to "Chat with me" on hover,
  * logs the click to /api/track-whatsapp before opening the chat.
  */
 export default function WhatsAppWidget() {
@@ -70,7 +70,7 @@ export default function WhatsAppWidget() {
 
         {/* Expanding label (desktop) */}
         <span className="pointer-events-none absolute right-full top-1/2 mr-4 hidden -translate-y-1/2 translate-x-3 whitespace-nowrap rounded-full border border-slate-200 bg-white px-5 py-2.5 font-heading text-sm font-semibold text-slate-950 opacity-0 shadow-card backdrop-blur-xl transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 sm:block">
-          Chat with me 💬
+          Chat with me
         </span>
       </a>
     </motion.div>

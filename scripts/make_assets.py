@@ -134,7 +134,7 @@ def project6():
     uy = cy + int(170 * S)
     uw = int(560 * S)
     rounded(d, [ca[2] - int(30 * S) - uw, uy, ca[2] - int(30 * S), uy + int(84 * S)], int(16 * S), fill=BLUE + (255,))
-    d.text((ca[2] - int(30 - uw + 22) * S, uy + int(28 * S)), "Perfect — ship it! 🚀", font=font(int(22 * S), True), fill=(8, 12, 20))
+    d.text((ca[2] - int(30 - uw + 22) * S, uy + int(28 * S)), "Perfect — ship it!", font=font(int(22 * S), True), fill=(8, 12, 20))
     # input bar
     ib = [ca[0] + int(26 * S), ca[3] - int(96 * S), ca[2] - int(26 * S), ca[3] - int(26 * S)]
     rounded(d, ib, int(24 * S), fill=(18, 26, 44, 255), outline=(90, 110, 150, 120), width=max(2, S))

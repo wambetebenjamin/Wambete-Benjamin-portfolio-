@@ -94,12 +94,8 @@ export default function Footer() {
           <p className="text-center text-sm text-slate-500">
             © 2026 Wambete Benjamin. All Rights Reserved.
           </p>
-          <p className="flex items-center gap-1.5 text-xs text-slate-500">
-            Built with
-            <span aria-hidden="true" className="text-brandAmber">
-              ♥
-            </span>
-            using Next.js & Tailwind CSS · Nairobi, Kenya
+          <p className="text-xs text-slate-500">
+            Built with Next.js & Tailwind CSS · Nairobi, Kenya
           </p>
         </div>
       </div>

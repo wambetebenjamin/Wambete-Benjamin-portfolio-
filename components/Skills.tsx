@@ -32,7 +32,9 @@ export default function Skills() {
             >
               <div className="mb-2 flex items-center justify-between">
                 <span className="flex items-center gap-2 font-heading text-sm font-semibold text-slate-800">
-                  <span aria-hidden="true">{skill.icon}</span>
+                  <span className="rounded-full bg-electric/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-electric">
+                    {skill.icon}
+                  </span>
                   {skill.name}
                 </span>
                 <span className="font-heading text-sm font-bold text-electric">

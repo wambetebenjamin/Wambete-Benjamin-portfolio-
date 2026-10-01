@@ -86,7 +86,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
                     alt="Wambete Benjamin"
                     fill
                     sizes="36px"
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </span>
                 <span className="font-medium text-slate-700">
@@ -103,14 +103,14 @@ export default function BlogPostPage({ params }: { params: Params }) {
               </span>
             </div>
 
-            <div className="relative mt-9 aspect-[16/9] overflow-hidden rounded-3xl border border-slate-200 shadow-card">
+            <div className="relative mx-auto mt-9 aspect-[4/5] max-w-xl overflow-hidden rounded-3xl border border-slate-200 shadow-card">
               <Image
                 src={post.image}
                 alt={post.title}
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 768px"
-                className="object-cover"
+                className="object-cover object-top"
               />
             </div>
 
@@ -135,7 +135,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
                   alt="Wambete Benjamin"
                   fill
                   sizes="64px"
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
               <div>
@@ -168,13 +168,13 @@ export default function BlogPostPage({ params }: { params: Params }) {
                       href={`/blog/${p.slug}`}
                       className="group glass flex flex-col overflow-hidden rounded-3xl transition-all duration-300 hover:-translate-y-1 hover:border-electric/40"
                     >
-                      <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
+                      <div className="relative aspect-[4/5] overflow-hidden bg-slate-100">
                         <Image
                           src={p.image}
                           alt={p.title}
                           fill
                           sizes="(max-width: 640px) 100vw, 320px"
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                         />
                       </div>
                       <div className="p-5">

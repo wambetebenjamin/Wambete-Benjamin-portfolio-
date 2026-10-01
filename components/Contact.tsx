@@ -58,7 +58,7 @@ export default function Contact() {
         toast(
           data.mode === "logged"
             ? "Message received! I'll get back to you within 24 hours."
-            : "Message sent successfully! I'll get back to you within 24 hours. 🚀",
+            : "Message sent successfully! I'll get back to you within 24 hours.",
           "success",
         );
         setForm({
@@ -109,14 +109,33 @@ export default function Contact() {
             className="flex flex-col gap-5"
           >
             <div className="glass overflow-hidden rounded-3xl">
-              <div className="relative aspect-[16/10] bg-slate-100">
-                <Image
-                  src="/images/wambete-benjamin-rooftop.jpg"
-                  alt="Wambete Benjamin reviewing interface decisions"
-                  fill
-                  sizes="(max-width: 1024px) 90vw, 420px"
-                  className="object-cover"
-                />
+              <div className="relative isolate min-h-[430px] overflow-hidden bg-electric/5 p-5">
+                <div className="absolute right-5 top-6 hidden h-56 w-36 rotate-6 overflow-hidden rounded-[1.5rem] border border-white bg-white shadow-card sm:block">
+                  <Image
+                    src="/images/wambete-benjamin-city.jpg"
+                    alt="Wambete Benjamin city portrait"
+                    fill
+                    sizes="144px"
+                    className="object-cover object-top"
+                  />
+                </div>
+                <div className="relative z-10 mx-auto h-[390px] w-[220px] overflow-hidden rounded-[2rem] border border-white bg-white shadow-card">
+                  <Image
+                    src="/images/wambete-benjamin-rooftop.jpg"
+                    alt="Wambete Benjamin rooftop portrait"
+                    fill
+                    sizes="220px"
+                    className="object-cover object-top"
+                  />
+                </div>
+                <div className="glass absolute bottom-5 left-5 z-20 max-w-[220px] rounded-2xl px-4 py-3">
+                  <p className="font-heading text-sm font-bold text-slate-950">
+                    Nairobi based
+                  </p>
+                  <p className="text-xs text-slate-600">
+                    Available for web projects and collaborations.
+                  </p>
+                </div>
               </div>
               <div className="p-7">
                 <h3 className="font-heading text-xl font-bold text-slate-950">

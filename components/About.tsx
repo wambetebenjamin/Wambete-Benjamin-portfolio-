@@ -67,13 +67,13 @@ export default function About() {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="relative mx-auto w-full max-w-md"
           >
-            <div className="glow-frame relative aspect-[4/5] overflow-hidden rounded-[2rem] border-2 border-electric/25 bg-white shadow-card">
+            <div className="glow-frame relative aspect-[9/16] overflow-hidden rounded-[2rem] border-2 border-electric/25 bg-white shadow-card">
               <Image
                 src="/images/wambete-benjamin-bridge.jpg"
-                alt="Wambete Benjamin working on a laptop"
+                alt="Wambete Benjamin professional portrait"
                 fill
                 sizes="(max-width: 1024px) 90vw, 420px"
-                className="z-10 object-cover"
+                className="z-10 object-cover object-top"
               />
               {/* caption bar */}
               <div className="absolute inset-x-0 bottom-0 z-20 border-t border-slate-200/70 bg-white/90 p-5 backdrop-blur-md">

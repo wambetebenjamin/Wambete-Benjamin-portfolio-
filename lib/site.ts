@@ -56,14 +56,14 @@ export const stats = [
 ];
 
 export const skills = [
-  { name: "HTML / CSS", level: 95, icon: "🎨" },
-  { name: "JavaScript", level: 90, icon: "⚡" },
-  { name: "React.js", level: 88, icon: "⚛️" },
-  { name: "Node.js", level: 85, icon: "🟢" },
-  { name: "Python", level: 80, icon: "🐍" },
-  { name: "UI/UX Design", level: 75, icon: "✏️" },
-  { name: "MongoDB", level: 82, icon: "🍃" },
-  { name: "Tailwind CSS", level: 92, icon: "🌬️" },
+  { name: "HTML / CSS", level: 95, icon: "HTML" },
+  { name: "JavaScript", level: 90, icon: "JS" },
+  { name: "React.js", level: 88, icon: "React" },
+  { name: "Node.js", level: 85, icon: "Node" },
+  { name: "Python", level: 80, icon: "Py" },
+  { name: "UI/UX Design", level: 75, icon: "UX" },
+  { name: "MongoDB", level: 82, icon: "DB" },
+  { name: "Tailwind CSS", level: 92, icon: "TW" },
 ];
 
 export const otherTools = [
