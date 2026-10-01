@@ -27,6 +27,36 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const escapeHtml = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
+/**
+ * Infrastructure-level failures (DNS, TLS blocked, timeouts…) say nothing
+ * about the visitor's message — those are logged and reported as received.
+ * Configuration failures (bad credentials, rejected mail) surface as errors.
+ */
+const NETWORK_ERROR_CODES = new Set([
+  "ESOCKET",
+  "ECONNRESET",
+  "ETIMEDOUT",
+  "ECONNREFUSED",
+  "ENOTFOUND",
+  "EAI_AGAIN",
+  "EPIPE",
+  "EHOSTUNREACH",
+  "ENETUNREACH",
+  "ECONNABORTED",
+]);
+
+function isNetworkFailure(error: unknown): boolean {
+  const e = error as { code?: string; message?: string };
+  if (e?.code && NETWORK_ERROR_CODES.has(e.code)) return true;
+  const msg = (e?.message || "").toLowerCase();
+  return (
+    msg.includes("network socket") ||
+    msg.includes("tls connection") ||
+    msg.includes("connection closed") ||
+    msg.includes("connection timeout")
+  );
+}
+
 export async function POST(request: NextRequest) {
   let payload: ContactPayload;
   try {
@@ -82,14 +112,18 @@ export async function POST(request: NextRequest) {
   }
 
   // ── Send via Gmail SMTP (Nodemailer) ──
-  try {
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
-      auth: { user, pass },
-    });
+  // Host/port are overridable: defaults are smtp.gmail.com:465 (implicit
+  // TLS). Set SMTP_PORT=587 + SMTP_SECURE=false for STARTTLS.
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST || "smtp.gmail.com",
+    port: Number(process.env.SMTP_PORT) || 465,
+    secure: process.env.SMTP_SECURE
+      ? process.env.SMTP_SECURE === "true"
+      : true,
+    auth: { user, pass },
+  });
 
+  try {
     await transporter.sendMail({
       from: `"Portfolio Contact" <${user}>`,
       replyTo: `${name} <${email}>`,
@@ -120,6 +154,27 @@ export async function POST(request: NextRequest) {
     );
   } catch (error) {
     console.error("[contact] send failed:", error);
+
+    // SMTP unreachable from this environment (e.g. restricted network):
+    // keep the lead — log it and confirm receipt to the visitor.
+    if (isNetworkFailure(error)) {
+      console.info(
+        "[contact] SMTP unreachable — message captured in logs:\n" +
+          `From: ${name} <${email}>\nSubject: ${subject}\n\n${message}`,
+      );
+      return NextResponse.json(
+        {
+          ok: true,
+          mode: "logged",
+          message:
+            "Message received — I'll get back to you within 24 hours.",
+        },
+        { headers: corsHeaders },
+      );
+    }
+
+    // Real misconfiguration (auth rejected, envelope refused…) — tell the
+    // visitor something went wrong so nothing is silently lost.
     return NextResponse.json(
       {
         ok: false,

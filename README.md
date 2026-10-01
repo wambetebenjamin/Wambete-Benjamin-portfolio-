@@ -42,11 +42,12 @@ npm run dev                  # http://localhost:3000
 | --- | --- |
 | `SMTP_USER` | Gmail address used to **send** contact-form emails |
 | `SMTP_PASS` | Gmail **App Password** (Google Account → Security → 2FA → App passwords) |
+| `SMTP_HOST` / `SMTP_PORT` / `SMTP_SECURE` | Optional overrides — default `smtp.gmail.com:465` TLS; use `587` + `false` for STARTTLS |
 | `CONTACT_TO` | Optional: delivery inbox (defaults to `SMTP_USER`) |
 | `NEXT_PUBLIC_WHATSAPP` | WhatsApp number in international format without `+` (default `254112272061`) |
 | `NEXT_PUBLIC_SITE_URL` | Public URL, used for SEO/OG/sitemap (e.g. `https://your-domain.com`) |
 
-> Without SMTP credentials the contact API still works in **log mode** — it prints submissions to the server console and returns success, so you can test the form before wiring Gmail.
+> Without SMTP credentials the contact API still works in **log mode** — it prints submissions to the server console and returns success, so you can test the form before wiring Gmail. The same fallback engages if the host can't reach the SMTP server (e.g. restricted networks); auth failures surface as errors so misconfiguration is never silent.
 
 ## 🔌 API Routes
 
