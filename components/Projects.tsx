@@ -14,7 +14,7 @@ export default function Projects() {
           eyebrow="Portfolio"
           title="Featured"
           highlight="projects"
-          description="A selection of products I've designed, built and shipped — hover a card to peek inside."
+          description="A selection of products I've designed, built and shipped. Hover a card to peek inside."
         />
 
         <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
@@ -31,7 +31,7 @@ export default function Projects() {
               <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
                 <Image
                   src={project.image}
-                  alt={`${project.title} — ${project.category}`}
+                  alt={`${project.title}   ${project.category}`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"

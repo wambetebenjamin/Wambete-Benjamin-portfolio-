@@ -22,7 +22,7 @@ export default function Blog() {
           eyebrow="Blog"
           title="Latest"
           highlight="articles"
-          description="Notes on web development, performance and design — written between builds."
+          description="Notes on web development, performance and design, written between builds."
         />
 
         <div className="grid gap-7 md:grid-cols-3">

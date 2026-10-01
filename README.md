@@ -1,14 +1,14 @@
 # Wambete Benjamin Portfolio
 
-A responsive personal portfolio for **Wambete Benjamin**, a full-stack web developer based in Nairobi, Kenya. Built with **Next.js 14 (App Router)**, **Tailwind CSS**, and **Framer Motion**.
+A responsive personal portfolio for **Wambete Benjamin**, a full stack web developer based in Nairobi, Kenya. Built with **Next.js 14 (App Router)**, **Tailwind CSS**, and **Framer Motion**.
 
 ![OG banner](public/images/og-image.png)
 
 ## What changed
 
 - Light theme inspired by the uploaded `nickie-master.zip` palette: teal `#009BB7`, deep blue `#076799`, amber `#FAAD3B`, clean white and soft light backgrounds.
-- Branding uses the full **Wambete Benjamin** name throughout.
-- Solid button fills only — no gradient-filled buttons.
+- Branding uses the full **Wambete Benjamin** name throughout with a custom WB logo.
+- Solid button fills only, with no gradient fill buttons.
 - The previously overused desk photo is deleted and not used anywhere.
 - The five alternate personal photos are used across the hero, about, blog, contact, and social preview areas.
 - The email address is used only behind mail icons/links and is not displayed as visible text on the website.
@@ -27,7 +27,7 @@ npm run dev
 
 | Variable | Purpose |
 | --- | --- |
-| `SMTP_USER` | Gmail address used to send contact-form emails |
+| `SMTP_USER` | Gmail address used to send contact form emails |
 | `SMTP_PASS` | Gmail App Password |
 | `SMTP_HOST` / `SMTP_PORT` / `SMTP_SECURE` | Optional SMTP overrides |
 | `CONTACT_TO` | Optional delivery inbox, defaults to `SMTP_USER` |
@@ -37,11 +37,11 @@ npm run dev
 ## Project Structure
 
 ```
-app/                       # App Router pages, metadata, API routes
-components/                # UI sections and shared components
-lib/site.ts                # Site content, links, projects, posts
-public/images/             # Personal photos, project shots, blog covers
-public/cv/                 # CV download
+app/             App Router pages, metadata, API routes
+components/      UI sections and shared components
+lib/site.ts      Site content, links, projects, posts
+public/images/   Personal photos, project shots, blog covers
+public/cv/       CV download
 ```
 
 ## Personal photo assets

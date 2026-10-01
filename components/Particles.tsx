@@ -12,7 +12,7 @@ type Particle = {
 
 /**
  * Lightweight particles.js-style background: drifting dots connected by
- * electric-blue lines, gently reacting to the pointer. Pure canvas — no
+ * electric-blue lines, gently reacting to the pointer. Pure canvas   no
  * external dependency, respects prefers-reduced-motion.
  */
 export default function Particles({ className = "" }: { className?: string }) {

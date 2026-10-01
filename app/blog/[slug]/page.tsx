@@ -146,7 +146,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
                   {site.name}
                 </p>
                 <p className="mt-1 text-sm leading-relaxed text-slate-600">
-                  Full-stack web developer & UI/UX designer from Nairobi,
+                  Full stack web developer & UI/UX designer from Nairobi,
                   Kenya. Building the modern web, one article at a time.
                 </p>
               </div>

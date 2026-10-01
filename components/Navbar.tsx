@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
+import Logo from "@/components/Logo";
 import { navLinks, HIRE_ME_URL } from "@/lib/site";
 import { CloseIcon, MenuIcon, WhatsAppIcon } from "@/components/icons";
 
@@ -67,15 +68,8 @@ export default function Navbar() {
         className="section-shell flex h-[72px] items-center justify-between"
         aria-label="Main navigation"
       >
-        {/* Logo */}
-        <a
-          href="#home"
-          className="group flex items-center gap-2 font-heading text-xl font-bold tracking-tight"
-        >
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-electric/40 bg-electric/10 text-sm font-extrabold text-electric transition-all group-hover:shadow-glow-sm">
-            WB
-          </span>
-          <span className="text-slate-950">Wambete Benjamin</span>
+        <a href="#home" className="group" aria-label="Wambete Benjamin home">
+          <Logo markClassName="h-11 w-11 transition-transform duration-300 group-hover:scale-105" />
         </a>
 
         {/* Desktop links */}
@@ -153,9 +147,7 @@ export default function Navbar() {
               aria-label="Mobile menu"
             >
               <div className="flex items-center justify-between border-b border-slate-200 p-5">
-                <span className="font-heading text-lg font-bold text-slate-950">
-                  Wambete Benjamin
-                </span>
+                <Logo markClassName="h-10 w-10" textClassName="font-heading text-lg font-bold text-slate-950" />
                 <button
                   onClick={() => setOpen(false)}
                   aria-label="Close menu"

@@ -38,7 +38,7 @@ export default function BlogIndexPage() {
             </h1>
             <p className="mt-4 max-w-2xl leading-relaxed text-slate-600">
               Essays and practical guides from five years of building for the
-              web — performance, design systems and everything in between.
+              web   performance, design systems and everything in between.
             </p>
 
             <div className="mt-14 grid gap-7 md:grid-cols-2 lg:grid-cols-3">

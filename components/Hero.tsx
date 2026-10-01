@@ -57,7 +57,7 @@ export default function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-electric opacity-50" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-electric" />
             </span>
-            Available for freelance & full-time roles
+            Available for freelance & full time roles
           </motion.div>
 
           <motion.p
@@ -93,7 +93,7 @@ export default function Hero() {
             className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg lg:mx-0"
           >
             Based in <span className="font-semibold text-electric">Nairobi, Kenya</span>, I
-            design and build fast, beautiful web applications — from pixel-perfect
+            design and build fast, beautiful web applications, from pixel perfect
             interfaces to robust APIs and databases.
           </motion.p>
 
@@ -171,7 +171,7 @@ export default function Hero() {
             <div className="relative h-full overflow-hidden rounded-[2rem] bg-slate-100">
               <Image
                 src="/images/wambete-benjamin-garden.jpg"
-                alt="Wambete Benjamin — Full-Stack Web Developer"
+                alt="Wambete Benjamin | Full Stack Web Developer"
                 fill
                 priority
                 sizes="(max-width: 1024px) 76vw, 350px"

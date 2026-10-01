@@ -1,3 +1,4 @@
+import Logo from "@/components/Logo";
 import { navLinks, site, socials } from "@/lib/site";
 import {
   GitHubIcon,
@@ -21,17 +22,11 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-[1.3fr_1fr_1fr]">
           {/* Brand */}
           <div>
-            <a
-              href="#home"
-              className="flex items-center gap-2 font-heading text-xl font-bold"
-            >
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-electric/40 bg-electric/10 text-sm font-extrabold text-electric">
-                WB
-              </span>
-              <span className="text-slate-950">Wambete Benjamin</span>
+            <a href="#home" className="inline-flex" aria-label="Wambete Benjamin home">
+              <Logo markClassName="h-11 w-11" />
             </a>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-600">
-              Full-stack web developer & UI/UX designer from Nairobi, Kenya —
+              Full stack web developer and UI/UX designer from Nairobi, Kenya,
               building products that are fast, accessible and beautiful.
             </p>
             <div className="mt-5 flex items-center gap-2 text-sm text-slate-600">

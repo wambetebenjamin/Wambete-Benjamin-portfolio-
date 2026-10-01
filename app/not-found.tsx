@@ -15,7 +15,7 @@ export default function NotFound() {
           This page wandered off the grid.
         </h1>
         <p className="mx-auto mt-3 max-w-md text-slate-600">
-          The page you&apos;re looking for doesn&apos;t exist — but my work,
+          The page you&apos;re looking for doesn&apos;t exist   but my work,
           blog and inbox are one click away.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">

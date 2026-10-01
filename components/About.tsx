@@ -42,8 +42,8 @@ function Counter({ value, suffix }: { value: number; suffix?: string }) {
 }
 
 const bioParagraphs = [
-  "I'm Wambete Benjamin, a full-stack web developer from Nairobi with 5+ years of experience turning ideas into polished digital products. I care deeply about the details — clean architecture, fast load times and interfaces that feel effortless.",
-  "My toolkit spans the whole stack: React and Next.js on the front, Node.js, Python and MongoDB on the back, with a healthy obsession for UI/UX design in between. From e-commerce platforms to AI-powered SaaS, I've shipped 50+ projects for clients across Kenya and beyond.",
+  "I'm Wambete Benjamin, a full stack web developer from Nairobi with 5+ years of experience turning ideas into polished digital products. I care deeply about the details like clean architecture, fast load times and interfaces that feel effortless.",
+  "My toolkit spans the whole stack: React and Next.js on the front, Node.js, Python and MongoDB on the back, with a healthy obsession for UI/UX design in between. From ecommerce platforms to AI powered SaaS, I've shipped 50+ projects for clients across Kenya and beyond.",
   "When I'm not coding, you'll find me mentoring junior developers, writing about the web, or exploring Nairobi's coffee scene. Got a project in mind? Let's make it real.",
 ];
 
@@ -81,7 +81,7 @@ export default function About() {
                   Wambete Benjamin
                 </p>
                 <p className="text-xs font-semibold text-electric">
-                  Full-Stack Developer · Nairobi
+                  Full Stack Developer · Nairobi
                 </p>
               </div>
             </div>

@@ -3,7 +3,7 @@ import { logClick, getStats } from "@/lib/analytics-store";
 
 export const dynamic = "force-dynamic";
 
-/** CORS — allow the deployed site (and local dev) to call this endpoint. */
+/** CORS   allow the deployed site (and local dev) to call this endpoint. */
 const corsHeaders = {
   "Access-Control-Allow-Origin": process.env.NEXT_PUBLIC_SITE_URL || "*",
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
@@ -15,7 +15,7 @@ export async function OPTIONS() {
   return new NextResponse(null, { status: 204, headers: corsHeaders });
 }
 
-/** POST — log a WhatsApp button click with timestamp + referrer. */
+/** POST   log a WhatsApp button click with timestamp + referrer. */
 export async function POST(request: NextRequest) {
   try {
     let referrer = request.headers.get("referer");
@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
       if (typeof body?.referrer === "string") referrer = body.referrer;
       if (typeof body?.pathname === "string") pathname = body.pathname;
     } catch {
-      /* no JSON body — headers only */
+      /* no JSON body   headers only */
     }
 
     const event = await logClick({ referrer, userAgent, pathname });
@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
-/** GET — simple analytics summary (total clicks + last 20 events). */
+/** GET   simple analytics summary (total clicks + last 20 events). */
 export async function GET() {
   try {
     const stats = await getStats();

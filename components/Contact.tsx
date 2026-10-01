@@ -76,7 +76,7 @@ export default function Contact() {
       }
     } catch {
       toast(
-        "Network error — please check your connection and try again.",
+        "Network error. Please check your connection and try again.",
         "error",
       );
     } finally {
@@ -215,7 +215,7 @@ export default function Contact() {
                   Prefer WhatsApp?
                 </span>
                 <span className="text-sm text-slate-600">
-                  Chat with me instantly — usually replies in minutes.
+                  Chat with me instantly   usually replies in minutes.
                 </span>
               </span>
             </a>
@@ -336,14 +336,14 @@ export default function Contact() {
                 minLength={10}
                 maxLength={4000}
                 rows={6}
-                placeholder="Tell me about your project — goals, timeline, budget…"
+                placeholder="Tell me about your project, goals, timeline, budget…"
                 value={form.message}
                 onChange={set("message")}
                 className={`${inputClasses} min-h-[150px] resize-y`}
               />
             </div>
 
-            {/* Honeypot — invisible to humans, catnip for bots */}
+            {/* Honeypot   invisible to humans, catnip for bots */}
             <div className="absolute -left-[9999px]" aria-hidden="true">
               <label htmlFor="website">Website</label>
               <input

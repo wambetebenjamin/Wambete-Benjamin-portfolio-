@@ -1,6 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#ffffff"/>
-  <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="#009BB7" stroke-width="4"/>
-  <circle cx="50" cy="14" r="5" fill="#FAAD3B"/>
-  <text x="32" y="42" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="middle" fill="#076799">WB</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#009BB7"/>
+      <stop offset="1" stop-color="#076799"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="17" fill="url(#bg)"/>
+  <path d="M15 18 L22.5 46 L32 25 L41.5 46 L49 18" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M34 18 H43 C49 18 52 22 52 27 C52 31 49 34 44 34 H34 M34 34 H45 C51 34 54 38 54 43 C54 49 50 52 43 52 H34" stroke="#FAAD3B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="49" cy="15" r="4" fill="#FAAD3B"/>
 </svg>

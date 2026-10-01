@@ -5,7 +5,7 @@
  * per lambda instance). We persist to /tmp when possible and always keep an
  * in-memory copy as a fallback, so the endpoint never fails. For durable,
  * long-term analytics swap `readAll`/`append` for Upstash Redis, Vercel KV or
- * Turso — the API shape stays identical.
+ * Turso   the API shape stays identical.
  */
 import { promises as fs } from "fs";
 import path from "path";
@@ -28,7 +28,7 @@ async function readAll(): Promise<ClickEvent[]> {
     const parsed = JSON.parse(raw) as ClickEvent[];
     if (Array.isArray(parsed)) fileEvents = parsed;
   } catch {
-    /* file missing or unreadable — fall through */
+    /* file missing or unreadable   fall through */
   }
   // Merge file + memory, deduped by id (memory always holds the latest).
   const seen = new Set<string>();
@@ -43,7 +43,7 @@ async function append(event: ClickEvent): Promise<void> {
     const current = await readAll();
     await fs.writeFile(FILE, JSON.stringify(current.slice(-1000)), "utf-8");
   } catch {
-    /* read-only filesystem — in-memory copy above still holds the event */
+    /* read-only filesystem   in-memory copy above still holds the event */
   }
 }
 

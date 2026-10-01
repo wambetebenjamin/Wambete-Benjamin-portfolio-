@@ -19,7 +19,7 @@ type ContactPayload = {
   email?: string;
   subject?: string;
   message?: string;
-  website?: string; // honeypot — must stay empty
+  website?: string; // honeypot   must stay empty
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -29,7 +29,7 @@ const escapeHtml = (s: string) =>
 
 /**
  * Infrastructure-level failures (DNS, TLS blocked, timeouts…) say nothing
- * about the visitor's message — those are logged and reported as received.
+ * about the visitor's message   those are logged and reported as received.
  * Configuration failures (bad credentials, rejected mail) surface as errors.
  */
 const NETWORK_ERROR_CODES = new Set([
@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // Honeypot: bots fill every field — pretend success but do nothing.
+  // Honeypot: bots fill every field   pretend success but do nothing.
   if (payload.website) {
     return NextResponse.json({ ok: true }, { headers: corsHeaders });
   }
@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
 
   const errors: string[] = [];
   if (name.length < 2 || name.length > 80)
-    errors.push("Please enter your name (2–80 characters).");
+    errors.push("Please enter your name (2 to 80 characters).");
   if (!EMAIL_RE.test(email)) errors.push("Please enter a valid email address.");
   if (message.length < 10 || message.length > 4000)
     errors.push("Your message should be between 10 and 4000 characters.");
@@ -98,14 +98,14 @@ export async function POST(request: NextRequest) {
   // ── No SMTP configured: log to console (dev / preview friendly) ──
   if (!user || !pass || !to) {
     console.warn(
-      "[contact] SMTP not configured — logging message instead of sending.\n" +
+      "[contact] SMTP not configured, logging message instead of sending.\n" +
         `From: ${name} <${email}>\nSubject: ${subject}\n\n${message}`,
     );
     return NextResponse.json(
       {
         ok: true,
         mode: "logged",
-        message: "Message received (SMTP not configured — logged to server).",
+        message: "Message received (SMTP not configured, logged to server).",
       },
       { headers: corsHeaders },
     );
@@ -156,10 +156,10 @@ export async function POST(request: NextRequest) {
     console.error("[contact] send failed:", error);
 
     // SMTP unreachable from this environment (e.g. restricted network):
-    // keep the lead — log it and confirm receipt to the visitor.
+    // keep the lead   log it and confirm receipt to the visitor.
     if (isNetworkFailure(error)) {
       console.info(
-        "[contact] SMTP unreachable — message captured in logs:\n" +
+        "[contact] SMTP unreachable, message captured in logs:\n" +
           `From: ${name} <${email}>\nSubject: ${subject}\n\n${message}`,
       );
       return NextResponse.json(
@@ -167,13 +167,13 @@ export async function POST(request: NextRequest) {
           ok: true,
           mode: "logged",
           message:
-            "Message received — I'll get back to you within 24 hours.",
+            "Message received. I'll get back to you within 24 hours.",
         },
         { headers: corsHeaders },
       );
     }
 
-    // Real misconfiguration (auth rejected, envelope refused…) — tell the
+    // Real misconfiguration (auth rejected, envelope refused…)   tell the
     // visitor something went wrong so nothing is silently lost.
     return NextResponse.json(
       {
