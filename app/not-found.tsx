@@ -11,10 +11,10 @@ export default function NotFound() {
         <p className="font-heading text-[7rem] font-extrabold leading-none gradient-text sm:text-[10rem]">
           404
         </p>
-        <h1 className="mt-2 font-heading text-2xl font-bold text-white">
+        <h1 className="mt-2 font-heading text-2xl font-bold text-ink-950">
           This page wandered off the grid.
         </h1>
-        <p className="mx-auto mt-3 max-w-md text-slate-400">
+        <p className="mx-auto mt-3 max-w-md text-slate-600">
           The page you&apos;re looking for doesn&apos;t exist — but my work,
           blog and inbox are one click away.
         </p>

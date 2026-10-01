@@ -54,7 +54,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             custom={0.05}
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-electric/30 bg-electric/10 px-4 py-1.5 font-heading text-xs font-medium text-electric-200"
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-electric/30 bg-electric/10 px-4 py-1.5 font-heading text-xs font-medium text-electric"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-electric opacity-60" />
@@ -68,9 +68,9 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             custom={0.15}
-            className="font-heading text-lg font-medium text-slate-300"
+            className="font-heading text-lg font-medium text-slate-600"
           >
-            👋 Hi, I&apos;m <span className="text-white">Wambete Benjamin</span>
+            👋 Hi, I&apos;m <span className="text-ink-950">Wambete Benjamin</span>
           </motion.p>
 
           <motion.h1
@@ -78,7 +78,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             custom={0.25}
-            className="mt-3 font-heading text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl xl:text-6xl"
+            className="mt-3 font-heading text-4xl font-extrabold leading-tight tracking-tight text-ink-950 sm:text-5xl xl:text-6xl"
           >
             I&apos;m a
             <br className="sm:hidden" />{" "}
@@ -93,7 +93,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             custom={0.35}
-            className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-400 sm:text-lg lg:mx-0"
+            className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg lg:mx-0"
           >
             Based in <span className="text-electric">Nairobi, Kenya</span> 🇰🇪, I
             design and build fast, beautiful web applications — from pixel-perfect
@@ -138,7 +138,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${label} profile`}
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-electric/50 hover:text-electric hover:shadow-glow-sm"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-ink-950/10 bg-white/80 text-slate-600 transition-all duration-300 hover:-translate-y-1 hover:border-electric/50 hover:text-electric hover:shadow-glow-sm"
               >
                 <Icon className="h-5 w-5" />
               </a>
@@ -179,7 +179,7 @@ export default function Hero() {
             className="glass absolute -left-6 top-10 z-20 hidden rounded-2xl px-4 py-3 sm:block"
           >
             <p className="font-heading text-lg font-bold text-electric">5+</p>
-            <p className="text-xs text-slate-400">Years Experience</p>
+            <p className="text-xs text-slate-600">Years Experience</p>
           </motion.div>
           <motion.div
             animate={{ y: [0, 12, 0] }}
@@ -192,7 +192,7 @@ export default function Hero() {
             className="glass absolute -right-4 bottom-12 z-20 hidden rounded-2xl px-4 py-3 sm:block"
           >
             <p className="font-heading text-lg font-bold text-electric">50+</p>
-            <p className="text-xs text-slate-400">Projects Delivered</p>
+            <p className="text-xs text-slate-600">Projects Delivered</p>
           </motion.div>
 
           {/* Quick WhatsApp chip */}
@@ -200,7 +200,7 @@ export default function Hero() {
             href={WHATSAPP_WIDGET_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="glass absolute -bottom-5 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full px-5 py-2.5 font-heading text-sm font-medium text-white transition-colors hover:text-electric"
+            className="glass absolute -bottom-5 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full px-5 py-2.5 font-heading text-sm font-medium text-ink-950 transition-colors hover:text-electric"
           >
             <WhatsAppIcon className="h-4 w-4 text-whatsapp" />
             Let&apos;s build together

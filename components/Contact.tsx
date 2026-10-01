@@ -21,7 +21,7 @@ import {
 type Status = "idle" | "sending";
 
 const inputClasses =
-  "min-h-[48px] w-full rounded-xl border border-white/10 bg-ink-800/80 px-4 py-3 text-sm text-white placeholder-slate-500 outline-none backdrop-blur transition-all duration-300 focus:border-electric/60 focus:bg-ink-800 focus:shadow-glow-sm";
+  "min-h-[48px] w-full rounded-xl border border-ink-950/10 bg-white/90 px-4 py-3 text-sm text-ink-950 placeholder-slate-500 outline-none backdrop-blur transition-all duration-300 focus:border-electric/60 focus:bg-white focus:shadow-glow-sm";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -109,10 +109,10 @@ export default function Contact() {
             className="flex flex-col gap-5"
           >
             <div className="glass rounded-3xl p-7">
-              <h3 className="font-heading text-xl font-bold text-white">
+              <h3 className="font-heading text-xl font-bold text-ink-950">
                 Contact information
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-400">
+              <p className="mt-2 text-sm leading-relaxed text-slate-600">
                 Based in Nairobi, working with clients worldwide. Average reply
                 time: under 24 hours.
               </p>
@@ -130,7 +130,7 @@ export default function Contact() {
                       <span className="block text-xs uppercase tracking-wider text-slate-500">
                         Email
                       </span>
-                      <span className="text-sm font-medium text-slate-200 transition-colors group-hover:text-electric">
+                      <span className="text-sm font-medium text-slate-700 transition-colors group-hover:text-electric">
                         {site.email}
                       </span>
                     </span>
@@ -148,7 +148,7 @@ export default function Contact() {
                       <span className="block text-xs uppercase tracking-wider text-slate-500">
                         Phone / WhatsApp
                       </span>
-                      <span className="text-sm font-medium text-slate-200 transition-colors group-hover:text-electric">
+                      <span className="text-sm font-medium text-slate-700 transition-colors group-hover:text-electric">
                         {site.phone}
                       </span>
                     </span>
@@ -162,7 +162,7 @@ export default function Contact() {
                     <span className="block text-xs uppercase tracking-wider text-slate-500">
                       Location
                     </span>
-                    <span className="text-sm font-medium text-slate-200">
+                    <span className="text-sm font-medium text-slate-700">
                       {site.location}
                     </span>
                   </span>
@@ -181,10 +181,10 @@ export default function Contact() {
                 <WhatsAppIcon className="h-6 w-6" />
               </span>
               <span>
-                <span className="block font-heading text-sm font-bold text-white">
+                <span className="block font-heading text-sm font-bold text-ink-950">
                   Prefer WhatsApp?
                 </span>
-                <span className="text-sm text-slate-400">
+                <span className="text-sm text-slate-600">
                   Chat with me instantly — usually replies in minutes.
                 </span>
               </span>
@@ -195,7 +195,7 @@ export default function Contact() {
               <span className="font-heading text-xs uppercase tracking-wider text-slate-500">
                 Follow
               </span>
-              <span className="h-px flex-1 bg-white/10" />
+              <span className="h-px flex-1 bg-electric/10" />
               {[
                 { label: "GitHub", href: socials.github, Icon: GitHubIcon },
                 { label: "LinkedIn", href: socials.linkedin, Icon: LinkedInIcon },
@@ -213,7 +213,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-400 transition-all hover:-translate-y-0.5 hover:border-electric/50 hover:text-electric"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-ink-950/10 bg-white/80 text-slate-600 transition-all hover:-translate-y-0.5 hover:border-electric/50 hover:text-electric"
                 >
                   <Icon className="h-4 w-4" />
                 </a>
@@ -235,7 +235,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="name"
-                  className="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-slate-400"
+                  className="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-slate-600"
                 >
                   Name <span className="text-electric">*</span>
                 </label>
@@ -256,7 +256,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="email"
-                  className="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-slate-400"
+                  className="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-slate-600"
                 >
                   Email <span className="text-electric">*</span>
                 </label>
@@ -277,7 +277,7 @@ export default function Contact() {
             <div className="mt-5">
               <label
                 htmlFor="subject"
-                className="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-slate-400"
+                className="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-slate-600"
               >
                 Subject
               </label>
@@ -296,7 +296,7 @@ export default function Contact() {
             <div className="mt-5">
               <label
                 htmlFor="message"
-                className="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-slate-400"
+                className="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-slate-600"
               >
                 Message <span className="text-electric">*</span>
               </label>

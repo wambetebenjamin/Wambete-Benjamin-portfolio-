@@ -67,14 +67,14 @@ export default function BlogPostPage({ params }: { params: Params }) {
           <div className="section-shell relative max-w-3xl">
             <Link
               href="/blog"
-              className="inline-flex min-h-[44px] items-center gap-2 text-sm font-medium text-electric transition-colors hover:text-electric-200"
+              className="inline-flex min-h-[44px] items-center gap-2 text-sm font-medium text-electric transition-colors hover:text-electric"
             >
               <ArrowRightIcon className="h-4 w-4 rotate-180" />
               Back to all articles
             </Link>
 
             <span className="badge mt-6">{post.category}</span>
-            <h1 className="mt-4 font-heading text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl">
+            <h1 className="mt-4 font-heading text-3xl font-extrabold leading-tight tracking-tight text-ink-950 sm:text-4xl">
               {post.title}
             </h1>
 
@@ -89,7 +89,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
                     className="object-cover"
                   />
                 </span>
-                <span className="font-medium text-slate-300">
+                <span className="font-medium text-slate-600">
                   {site.name}
                 </span>
               </span>
@@ -103,7 +103,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
               </span>
             </div>
 
-            <div className="relative mt-9 aspect-[16/9] overflow-hidden rounded-3xl border border-white/10 shadow-card">
+            <div className="relative mt-9 aspect-[16/9] overflow-hidden rounded-3xl border border-ink-950/10 shadow-card">
               <Image
                 src={post.image}
                 alt={post.title}
@@ -118,8 +118,8 @@ export default function BlogPostPage({ params }: { params: Params }) {
               {post.body.map((paragraph, i) => (
                 <p
                   key={i}
-                  className={`leading-[1.85] text-slate-300 ${
-                    i === 0 ? "text-lg text-slate-200" : ""
+                  className={`leading-[1.85] text-slate-600 ${
+                    i === 0 ? "text-lg text-slate-700" : ""
                   }`}
                 >
                   {paragraph}
@@ -142,10 +142,10 @@ export default function BlogPostPage({ params }: { params: Params }) {
                 <p className="font-heading text-sm font-bold uppercase tracking-wider text-electric">
                   Written by
                 </p>
-                <p className="mt-1 font-heading text-lg font-bold text-white">
+                <p className="mt-1 font-heading text-lg font-bold text-ink-950">
                   {site.name}
                 </p>
-                <p className="mt-1 text-sm leading-relaxed text-slate-400">
+                <p className="mt-1 text-sm leading-relaxed text-slate-600">
                   Full-stack web developer & UI/UX designer from Nairobi,
                   Kenya. Building the modern web, one article at a time.
                 </p>
@@ -158,7 +158,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
             {/* More articles */}
             {others.length > 0 && (
               <div className="mt-14">
-                <h2 className="font-heading text-xl font-bold text-white">
+                <h2 className="font-heading text-xl font-bold text-ink-950">
                   Keep reading
                 </h2>
                 <div className="mt-6 grid gap-6 sm:grid-cols-2">
@@ -181,7 +181,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
                         <span className="text-xs font-medium text-electric">
                           {p.category}
                         </span>
-                        <h3 className="mt-2 font-heading text-base font-bold leading-snug text-white group-hover:text-electric">
+                        <h3 className="mt-2 font-heading text-base font-bold leading-snug text-ink-950 group-hover:text-electric">
                           {p.title}
                         </h3>
                       </div>

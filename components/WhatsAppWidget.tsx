@@ -70,7 +70,7 @@ export default function WhatsAppWidget() {
         <WhatsAppIcon className="h-8 w-8 transition-transform duration-300 group-hover:scale-110" />
 
         {/* Expanding label (desktop) */}
-        <span className="pointer-events-none absolute right-full top-1/2 mr-4 hidden -translate-y-1/2 translate-x-3 whitespace-nowrap rounded-full border border-white/10 bg-ink-900/95 px-5 py-2.5 font-heading text-sm font-semibold text-white opacity-0 shadow-card backdrop-blur-xl transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 sm:block">
+        <span className="pointer-events-none absolute right-full top-1/2 mr-4 hidden -translate-y-1/2 translate-x-3 whitespace-nowrap rounded-full border border-ink-950/10 bg-white/95 px-5 py-2.5 font-heading text-sm font-semibold text-ink-950 opacity-0 shadow-card backdrop-blur-xl transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 sm:block">
           Chat with me 💬
         </span>
       </a>

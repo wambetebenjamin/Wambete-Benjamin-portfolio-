@@ -37,20 +37,20 @@ export default function Projects() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 {/* Hover overlay with description */}
-                <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink-950 via-ink-950/85 to-ink-950/20 p-5 opacity-0 backdrop-blur-[2px] transition-all duration-500 group-hover:opacity-100">
-                  <p className="translate-y-4 text-sm leading-relaxed text-slate-300 transition-transform duration-500 group-hover:translate-y-0">
+                <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink-950 via-ink-950/85 to-ink-950/25 p-5 opacity-0 backdrop-blur-[2px] transition-all duration-500 group-hover:opacity-100">
+                  <p className="translate-y-4 text-sm leading-relaxed text-white transition-transform duration-500 group-hover:translate-y-0">
                     {project.description}
                   </p>
                 </div>
                 {/* category tag */}
-                <span className="absolute left-4 top-4 rounded-full border border-electric/30 bg-ink-950/70 px-3 py-1 font-heading text-[11px] font-semibold uppercase tracking-wider text-electric backdrop-blur-md">
+                <span className="absolute left-4 top-4 rounded-full border border-electric/30 bg-white/90 px-3 py-1 font-heading text-[11px] font-semibold uppercase tracking-wider text-electric backdrop-blur-md">
                   {project.category}
                 </span>
               </div>
 
               {/* Card body */}
               <div className="flex flex-1 flex-col p-5">
-                <h3 className="font-heading text-lg font-bold text-white transition-colors group-hover:text-electric">
+                <h3 className="font-heading text-lg font-bold text-ink-950 transition-colors group-hover:text-electric">
                   {project.title}
                 </h3>
 
@@ -59,7 +59,7 @@ export default function Projects() {
                   {project.tech.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-medium text-slate-300 transition-colors group-hover:border-electric/30 group-hover:text-electric-200"
+                      className="rounded-full border border-ink-950/10 bg-white/80 px-2.5 py-1 text-[11px] font-medium text-slate-600 transition-colors group-hover:border-electric/30 group-hover:text-electric"
                     >
                       {t}
                     </span>
@@ -72,7 +72,7 @@ export default function Projects() {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex min-h-[40px] flex-1 items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-electric to-sky-500 px-4 font-heading text-xs font-bold text-ink-950 transition-all hover:shadow-glow-sm"
+                    className="inline-flex min-h-[40px] flex-1 items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-electric to-gold px-4 font-heading text-xs font-bold text-white transition-all hover:shadow-glow-sm"
                   >
                     <ExternalLinkIcon className="h-3.5 w-3.5" />
                     Live Demo
@@ -82,7 +82,7 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${project.title} source code on GitHub`}
-                    className="inline-flex min-h-[40px] w-[44px] items-center justify-center rounded-full border border-white/15 bg-white/5 text-slate-300 transition-all hover:border-electric/50 hover:text-electric hover:shadow-glow-sm"
+                    className="inline-flex min-h-[40px] w-[44px] items-center justify-center rounded-full border border-ink-950/15 bg-white/80 text-slate-600 transition-all hover:border-electric/50 hover:text-electric hover:shadow-glow-sm"
                   >
                     <GitHubIcon className="h-4 w-4" />
                   </a>

@@ -31,7 +31,7 @@ export default function Skills() {
               transition={{ delay: 0.05 * (i % 4), duration: 0.5 }}
             >
               <div className="mb-2 flex items-center justify-between">
-                <span className="flex items-center gap-2 font-heading text-sm font-semibold text-slate-200">
+                <span className="flex items-center gap-2 font-heading text-sm font-semibold text-slate-700">
                   <span aria-hidden="true">{skill.icon}</span>
                   {skill.name}
                 </span>
@@ -41,7 +41,7 @@ export default function Skills() {
               </div>
 
               <div
-                className="h-3 overflow-hidden rounded-full border border-white/10 bg-ink-800"
+                className="h-3 overflow-hidden rounded-full border border-ink-950/10 bg-white"
                 role="progressbar"
                 aria-valuenow={skill.level}
                 aria-valuemin={0}
@@ -80,7 +80,7 @@ export default function Skills() {
               {[...otherTools, ...otherTools].map((tool, i) => (
                 <span
                   key={`${tool}-${i}`}
-                  className="glass whitespace-nowrap rounded-full px-5 py-2.5 font-heading text-sm font-medium text-slate-300"
+                  className="glass whitespace-nowrap rounded-full px-5 py-2.5 font-heading text-sm font-medium text-slate-600"
                 >
                   {tool}
                 </span>

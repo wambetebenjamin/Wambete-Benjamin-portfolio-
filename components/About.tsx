@@ -105,24 +105,24 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h3 className="font-heading text-2xl font-bold text-white sm:text-3xl">
+            <h3 className="font-heading text-2xl font-bold text-ink-950 sm:text-3xl">
               Building the web, one pixel{" "}
               <span className="gradient-text">& one API</span> at a time
             </h3>
 
             {bioParagraphs.map((p, i) => (
-              <p key={i} className="mt-5 leading-relaxed text-slate-400">
+              <p key={i} className="mt-5 leading-relaxed text-slate-600">
                 {p}
               </p>
             ))}
 
             {/* Meta chips */}
             <div className="mt-6 flex flex-wrap gap-3">
-              <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-slate-300">
+              <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-slate-600">
                 <MapPinIcon className="h-4 w-4 text-electric" />
                 {site.location}
               </span>
-              <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-slate-300">
+              <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-slate-600">
                 <MailIcon className="h-4 w-4 text-electric" />
                 {site.email}
               </span>
@@ -142,7 +142,7 @@ export default function About() {
                   <p className="font-heading text-3xl font-extrabold text-electric sm:text-4xl">
                     <Counter value={s.value} suffix={s.suffix} />
                   </p>
-                  <p className="mt-1 text-[11px] text-slate-400 sm:text-xs">
+                  <p className="mt-1 text-[11px] text-slate-600 sm:text-xs">
                     {s.label}
                   </p>
                 </motion.div>

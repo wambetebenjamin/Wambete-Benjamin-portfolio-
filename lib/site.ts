@@ -15,7 +15,7 @@ export const WHATSAPP_WIDGET_URL = waLink("Hi Benjamin! I saw your portfolio");
 
 export const site = {
   name: "Wambete Benjamin",
-  shortName: "AM Dev",
+  shortName: "Wambete Benjamin",
   title: "Wambete Benjamin — Full-Stack Web Developer | Nairobi, Kenya",
   description:
     "Wambete Benjamin is a full-stack web developer & UI/UX designer based in Nairobi, Kenya. He builds fast, beautiful web apps with React, Next.js and Node.js. 5+ years experience, 50+ projects, 30+ happy clients.",
@@ -156,41 +156,6 @@ export const projects: Project[] = [
     demo: "https://nexachat.example.com",
     github: "https://github.com/wambetebenjamin/nexachat",
     featured: true,
-  },
-];
-
-export type Testimonial = {
-  name: string;
-  role: string;
-  quote: string;
-  rating: number;
-  avatar: string;
-};
-
-export const testimonials: Testimonial[] = [
-  {
-    name: "Grace Achieng",
-    role: "CEO, Savannah Retail",
-    quote:
-      "Benjamin rebuilt our entire e-commerce platform in eight weeks. Page speed tripled, checkouts doubled, and he communicated clearly at every step. Easily the best developer decision we've made.",
-    rating: 5,
-    avatar: "/images/testimonial-1.jpg",
-  },
-  {
-    name: "Jonas Weber",
-    role: "Founder, Tatu Tech",
-    quote:
-      "I handed Benjamin a rough idea on a napkin and he returned a beautiful, production-ready app. His eye for design is rare among developers — he thinks like a product person, not just a coder.",
-    rating: 5,
-    avatar: "/images/testimonial-2.jpg",
-  },
-  {
-    name: "Priya Sharma",
-    role: "Product Manager, ElimuHub",
-    quote:
-      "Working with Benjamin felt like adding a whole product team. He challenged our assumptions, shipped ahead of schedule, and the students love the platform. We keep coming back for more.",
-    rating: 5,
-    avatar: "/images/testimonial-3.jpg",
   },
 ];
 

@@ -74,7 +74,7 @@ export default function Particles({ className = "" }: { className?: string }) {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(0, 212, 255, 0.55)";
+        ctx.fillStyle = "rgba(0, 155, 183, 0.34)";
         ctx.fill();
       }
 
@@ -87,7 +87,7 @@ export default function Particles({ className = "" }: { className?: string }) {
           const dist = Math.hypot(dx, dy);
           if (dist < LINK_DIST) {
             const alpha = (1 - dist / LINK_DIST) * 0.32;
-            ctx.strokeStyle = `rgba(0, 212, 255, ${alpha})`;
+            ctx.strokeStyle = `rgba(0, 155, 183, ${alpha})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -101,7 +101,7 @@ export default function Particles({ className = "" }: { className?: string }) {
         const mdist = Math.hypot(mdx, mdy);
         if (mdist < MOUSE_DIST) {
           const alpha = (1 - mdist / MOUSE_DIST) * 0.5;
-          ctx.strokeStyle = `rgba(0, 212, 255, ${alpha})`;
+          ctx.strokeStyle = `rgba(0, 155, 183, ${alpha})`;
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);

@@ -132,8 +132,8 @@ export async function POST(request: NextRequest) {
       text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
       html: `
         <div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:auto;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden">
-          <div style="background:#0a0e17;color:#00D4FF;padding:18px 24px;font-size:18px;font-weight:bold">
-            New message from your portfolio
+          <div style="background:#009BB7;color:#ffffff;padding:18px 24px;font-size:18px;font-weight:bold">
+            New message from Wambete Benjamin portfolio
           </div>
           <div style="padding:24px;color:#111827;font-size:14px;line-height:1.7">
             <p><strong>Name:</strong> ${escapeHtml(name)}</p>

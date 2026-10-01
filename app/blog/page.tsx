@@ -33,10 +33,10 @@ export default function BlogIndexPage() {
           />
           <div className="section-shell relative">
             <span className="badge">Blog</span>
-            <h1 className="mt-4 font-heading text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+            <h1 className="mt-4 font-heading text-4xl font-extrabold tracking-tight text-ink-950 sm:text-5xl">
               Thoughts on the <span className="gradient-text">modern web</span>
             </h1>
-            <p className="mt-4 max-w-2xl leading-relaxed text-slate-400">
+            <p className="mt-4 max-w-2xl leading-relaxed text-slate-600">
               Essays and practical guides from five years of building for the
               web — performance, design systems and everything in between.
             </p>
@@ -55,7 +55,7 @@ export default function BlogIndexPage() {
                       sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <span className="absolute left-4 top-4 rounded-full border border-electric/30 bg-ink-950/70 px-3 py-1 font-heading text-[11px] font-semibold uppercase tracking-wider text-electric backdrop-blur-md">
+                    <span className="absolute left-4 top-4 rounded-full border border-electric/30 bg-white/90 px-3 py-1 font-heading text-[11px] font-semibold uppercase tracking-wider text-electric backdrop-blur-md">
                       {post.category}
                     </span>
                   </div>
@@ -67,15 +67,15 @@ export default function BlogIndexPage() {
                         {post.readTime}
                       </span>
                     </div>
-                    <h2 className="mt-3 font-heading text-lg font-bold leading-snug text-white transition-colors group-hover:text-electric">
+                    <h2 className="mt-3 font-heading text-lg font-bold leading-snug text-ink-950 transition-colors group-hover:text-electric">
                       {post.title}
                     </h2>
-                    <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-slate-400">
+                    <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-slate-600">
                       {post.excerpt}
                     </p>
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="mt-5 inline-flex min-h-[44px] items-center gap-2 font-heading text-sm font-semibold text-electric hover:text-electric-200"
+                      className="mt-5 inline-flex min-h-[44px] items-center gap-2 font-heading text-sm font-semibold text-electric hover:text-electric"
                     >
                       Read More
                       <ArrowRightIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
