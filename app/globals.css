@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --electric: #00d4ff;
+  --bg: #05070d;
+}
+
+@property --glow-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem; /* offset for the fixed navbar */
+  }
+
+  body {
+    @apply bg-ink-950 text-slate-300 font-sans antialiased;
+    background-image:
+      radial-gradient(ellipse 60% 40% at 85% -5%, rgba(0, 212, 255, 0.07), transparent),
+      radial-gradient(ellipse 50% 35% at 0% 30%, rgba(0, 212, 255, 0.045), transparent);
+  }
+
+  ::selection {
+    @apply bg-electric/30 text-white;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-ink-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-ink-600;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-electric/60;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* ── Glassmorphism card ── */
+  .glass {
+    @apply border border-white/10 bg-white/[0.04] backdrop-blur-xl;
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.45),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .glass-strong {
+    @apply border border-white/10 bg-ink-900/80 backdrop-blur-2xl;
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.6),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.07);
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full bg-gradient-to-r from-electric to-sky-500 px-7 py-3 font-heading text-sm font-semibold text-ink-950 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric;
+  }
+
+  .btn-outline {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-electric/50 bg-electric/5 px-7 py-3 font-heading text-sm font-semibold text-electric transition-all duration-300 hover:-translate-y-0.5 hover:bg-electric/15 hover:shadow-glow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric;
+  }
+
+  .btn-ghost {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-5 py-2.5 font-heading text-sm font-medium text-slate-300 transition-colors hover:bg-white/5 hover:text-white;
+  }
+
+  /* ── Section helpers ── */
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-electric via-sky-400 to-electric bg-clip-text text-transparent;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full border border-electric/30 bg-electric/10 px-3 py-1 font-heading text-xs font-medium text-electric-200;
+  }
+
+  /* ── About image glow frame ── */
+  .glow-frame {
+    position: relative;
+  }
+  .glow-frame::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    border-radius: inherit;
+    background: conic-gradient(
+      from var(--glow-angle, 0deg),
+      #00d4ff,
+      #6366f1,
+      #00d4ff
+    );
+    filter: blur(28px);
+    opacity: 0.45;
+    z-index: 0;
+    animation: glow-rotate 6s linear infinite;
+  }
+  @property --glow-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  @keyframes glow-rotate {
+    to {
+      --glow-angle: 360deg;
+    }
+  }
+
+  /* ── Skill bar shimmer ── */
+  .skill-fill {
+    background-image: linear-gradient(90deg, #00728d, #00d4ff 60%, #8eecff);
+    position: relative;
+    overflow: hidden;
+  }
+  .skill-fill::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.35),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2.5s linear infinite;
+  }
+
+  /* ── Toasts ── */
+  .toast {
+    @apply pointer-events-auto flex w-full max-w-sm items-start gap-3 rounded-2xl p-4 shadow-card backdrop-blur-xl;
+  }
+}

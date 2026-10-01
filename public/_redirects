@@ -1,0 +1,8 @@
+# Clean-URL redirects (Netlify-style fallback — Vercel serves Next.js routes
+# natively, this file keeps the project portable to other hosts).
+/home               /
+/blog               /blog
+/blog/:slug         /blog/:slug
+/projects           /#projects
+/contact            /#contact
+/cv                 /cv/Wambete-Benjamin-CV.pdf
