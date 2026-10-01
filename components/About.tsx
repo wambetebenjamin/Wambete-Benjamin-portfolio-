@@ -69,7 +69,7 @@ export default function About() {
           >
             <div className="glow-frame relative aspect-[4/5] overflow-hidden rounded-[2rem] border-2 border-electric/25 bg-white shadow-card">
               <Image
-                src="/images/wambete-benjamin-portrait.jpg"
+                src="/images/wambete-benjamin-bridge.jpg"
                 alt="Wambete Benjamin working on a laptop"
                 fill
                 sizes="(max-width: 1024px) 90vw, 420px"
@@ -121,10 +121,14 @@ export default function About() {
                 <MapPinIcon className="h-4 w-4 text-electric" />
                 {site.location}
               </span>
-              <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-slate-700">
+              <a
+                href={`mailto:${site.email}`}
+                aria-label="Email Wambete Benjamin"
+                className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-slate-700 transition-colors hover:text-electric"
+              >
                 <MailIcon className="h-4 w-4 text-electric" />
-                {site.email}
-              </span>
+                Email me
+              </a>
             </div>
 
             {/* Counters */}

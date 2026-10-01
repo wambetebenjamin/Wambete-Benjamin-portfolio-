@@ -111,7 +111,7 @@ export default function Contact() {
             <div className="glass overflow-hidden rounded-3xl">
               <div className="relative aspect-[16/10] bg-slate-100">
                 <Image
-                  src="/images/wambete-benjamin-workspace.jpg"
+                  src="/images/wambete-benjamin-rooftop.jpg"
                   alt="Wambete Benjamin reviewing interface decisions"
                   fill
                   sizes="(max-width: 1024px) 90vw, 420px"
@@ -141,7 +141,7 @@ export default function Contact() {
                           Email
                         </span>
                         <span className="text-sm font-medium text-slate-800 transition-colors group-hover:text-electric">
-                          {site.email}
+                          Email me
                         </span>
                       </span>
                     </a>

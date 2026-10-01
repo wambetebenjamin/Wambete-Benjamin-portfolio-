@@ -82,7 +82,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
               <span className="flex items-center gap-2">
                 <span className="relative h-9 w-9 overflow-hidden rounded-full ring-2 ring-electric/40">
                   <Image
-                    src="/images/wambete-benjamin-square.jpg"
+                    src="/images/wambete-benjamin-city.jpg"
                     alt="Wambete Benjamin"
                     fill
                     sizes="36px"
@@ -131,7 +131,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
             <div className="glass mt-14 flex flex-col items-start gap-5 rounded-3xl p-7 sm:flex-row sm:items-center">
               <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full ring-2 ring-electric/50">
                 <Image
-                  src="/images/wambete-benjamin-square.jpg"
+                  src="/images/wambete-benjamin-city.jpg"
                   alt="Wambete Benjamin"
                   fill
                   sizes="64px"

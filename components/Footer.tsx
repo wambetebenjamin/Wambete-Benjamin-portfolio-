@@ -40,7 +40,7 @@ export default function Footer() {
                 href={`mailto:${site.email}`}
                 className="transition-colors hover:text-electric"
               >
-                {site.email}
+                Email me
               </a>
             </div>
           </div>

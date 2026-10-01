@@ -9,7 +9,9 @@ A responsive personal portfolio for **Wambete Benjamin**, a full-stack web devel
 - Light theme inspired by the uploaded `nickie-master.zip` palette: teal `#009BB7`, deep blue `#076799`, amber `#FAAD3B`, clean white and soft light backgrounds.
 - Branding uses the full **Wambete Benjamin** name throughout.
 - Solid button fills only — no gradient-filled buttons.
-- Personal photos are used for the hero, about, contact, and blog author areas.
+- The previously overused desk photo is deleted and not used anywhere.
+- The five alternate personal photos are used across the hero, about, blog, contact, and social preview areas.
+- The email address is used only behind mail icons/links and is not displayed as visible text on the website.
 - Generic testimonials/reviews have been removed from the homepage.
 - Facebook social links were removed.
 
@@ -44,9 +46,11 @@ public/cv/                 # CV download
 
 ## Personal photo assets
 
-- `public/images/wambete-benjamin-square.jpg` — hero/avatar/blog author image
-- `public/images/wambete-benjamin-portrait.jpg` — about portrait
-- `public/images/wambete-benjamin-workspace.jpg` — contact/workspace image
+- `public/images/wambete-benjamin-bridge.jpg`
+- `public/images/wambete-benjamin-garden.jpg`
+- `public/images/wambete-benjamin-rooftop.jpg`
+- `public/images/wambete-benjamin-street.jpg`
+- `public/images/wambete-benjamin-city.jpg`
 
 ## License
 

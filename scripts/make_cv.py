@@ -77,7 +77,7 @@ c.setFont("Helvetica", 9)
 c.setFillColor(GREY)
 c.drawString(M, y, "Nairobi, Kenya")
 c.drawString(M + 32 * mm, y, "•  +254 112 272 061")
-c.drawString(M + 78 * mm, y, "•  hello@wambetebenjamin.dev")
+c.drawString(M + 78 * mm, y, "•  shambetz@gmail.com")
 y -= 4.6 * mm
 links = "GitHub: github.com/wambetebenjamin   |   LinkedIn: linkedin.com/in/wambetebenjamin   |   Portfolio: wambetebenjamin.dev"
 c.setFont("Helvetica", 8.3)

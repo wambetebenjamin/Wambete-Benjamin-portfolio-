@@ -163,7 +163,7 @@ export default function Hero() {
 
           <div className="glow-frame relative aspect-square overflow-hidden rounded-[2.5rem] border border-electric/30 bg-white">
             <Image
-              src="/images/wambete-benjamin-square.jpg"
+              src="/images/wambete-benjamin-garden.jpg"
               alt="Wambete Benjamin — Full-Stack Web Developer"
               fill
               priority

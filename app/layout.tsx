@@ -88,7 +88,6 @@ const personJsonLd = {
   name: site.name,
   jobTitle: "Full-Stack Web Developer",
   url: site.url,
-  email: site.email,
   telephone: site.phoneHref,
   address: {
     "@type": "PostalAddress",
