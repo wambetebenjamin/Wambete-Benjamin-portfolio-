@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
       "Portfolio of Wambete Benjamin, a full-stack web developer & UI/UX designer based in Nairobi, Kenya.",
     start_url: "/",
     display: "standalone",
-    background_color: "#F2F3F5",
+    background_color: "#f7fbfc",
     theme_color: "#009BB7",
     icons: [
       {

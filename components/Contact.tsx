@@ -1,12 +1,12 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/SectionHeading";
 import { useToast } from "@/components/Toast";
 import { site, socials, HIRE_ME_URL } from "@/lib/site";
 import {
-  FacebookIcon,
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
@@ -21,7 +21,7 @@ import {
 type Status = "idle" | "sending";
 
 const inputClasses =
-  "min-h-[48px] w-full rounded-xl border border-ink-950/10 bg-white/90 px-4 py-3 text-sm text-ink-950 placeholder-slate-500 outline-none backdrop-blur transition-all duration-300 focus:border-electric/60 focus:bg-white focus:shadow-glow-sm";
+  "min-h-[48px] w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-950 placeholder-slate-400 outline-none shadow-sm transition-all duration-300 focus:border-electric/60 focus:bg-white focus:shadow-glow-sm";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -88,7 +88,7 @@ export default function Contact() {
     <section id="contact" className="relative scroll-mt-24 py-24 sm:py-28">
       <div
         aria-hidden="true"
-        className="absolute bottom-0 left-1/2 h-80 w-[46rem] max-w-full -translate-x-1/2 rounded-full bg-electric/5 blur-3xl"
+        className="absolute bottom-0 left-1/2 h-80 w-[46rem] max-w-full -translate-x-1/2 rounded-full bg-electric/10 blur-3xl"
       />
 
       <div className="section-shell relative">
@@ -108,66 +108,77 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="flex flex-col gap-5"
           >
-            <div className="glass rounded-3xl p-7">
-              <h3 className="font-heading text-xl font-bold text-ink-950">
-                Contact information
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                Based in Nairobi, working with clients worldwide. Average reply
-                time: under 24 hours.
-              </p>
+            <div className="glass overflow-hidden rounded-3xl">
+              <div className="relative aspect-[16/10] bg-slate-100">
+                <Image
+                  src="/images/wambete-benjamin-workspace.jpg"
+                  alt="Wambete Benjamin reviewing interface decisions"
+                  fill
+                  sizes="(max-width: 1024px) 90vw, 420px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-7">
+                <h3 className="font-heading text-xl font-bold text-slate-950">
+                  Contact information
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                  Based in Nairobi, working with clients worldwide. Average reply
+                  time: under 24 hours.
+                </p>
 
-              <ul className="mt-7 flex flex-col gap-5">
-                <li>
-                  <a
-                    href={`mailto:${site.email}`}
-                    className="group flex items-center gap-4"
-                  >
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-electric/30 bg-electric/10 text-electric transition-all group-hover:shadow-glow-sm">
-                      <MailIcon className="h-5 w-5" />
+                <ul className="mt-7 flex flex-col gap-5">
+                  <li>
+                    <a
+                      href={`mailto:${site.email}`}
+                      className="group flex items-center gap-4"
+                    >
+                      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-electric/25 bg-electric/10 text-electric transition-all group-hover:shadow-glow-sm">
+                        <MailIcon className="h-5 w-5" />
+                      </span>
+                      <span>
+                        <span className="block text-xs uppercase tracking-wider text-slate-500">
+                          Email
+                        </span>
+                        <span className="text-sm font-medium text-slate-800 transition-colors group-hover:text-electric">
+                          {site.email}
+                        </span>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href={`tel:${site.phoneHref}`}
+                      className="group flex items-center gap-4"
+                    >
+                      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-electric/25 bg-electric/10 text-electric transition-all group-hover:shadow-glow-sm">
+                        <PhoneIcon className="h-5 w-5" />
+                      </span>
+                      <span>
+                        <span className="block text-xs uppercase tracking-wider text-slate-500">
+                          Phone / WhatsApp
+                        </span>
+                        <span className="text-sm font-medium text-slate-800 transition-colors group-hover:text-electric">
+                          {site.phone}
+                        </span>
+                      </span>
+                    </a>
+                  </li>
+                  <li className="flex items-center gap-4">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-electric/25 bg-electric/10 text-electric">
+                      <MapPinIcon className="h-5 w-5" />
                     </span>
                     <span>
                       <span className="block text-xs uppercase tracking-wider text-slate-500">
-                        Email
+                        Location
                       </span>
-                      <span className="text-sm font-medium text-slate-700 transition-colors group-hover:text-electric">
-                        {site.email}
-                      </span>
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`tel:${site.phoneHref}`}
-                    className="group flex items-center gap-4"
-                  >
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-electric/30 bg-electric/10 text-electric transition-all group-hover:shadow-glow-sm">
-                      <PhoneIcon className="h-5 w-5" />
-                    </span>
-                    <span>
-                      <span className="block text-xs uppercase tracking-wider text-slate-500">
-                        Phone / WhatsApp
-                      </span>
-                      <span className="text-sm font-medium text-slate-700 transition-colors group-hover:text-electric">
-                        {site.phone}
+                      <span className="text-sm font-medium text-slate-800">
+                        {site.location}
                       </span>
                     </span>
-                  </a>
-                </li>
-                <li className="flex items-center gap-4">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-electric/30 bg-electric/10 text-electric">
-                    <MapPinIcon className="h-5 w-5" />
-                  </span>
-                  <span>
-                    <span className="block text-xs uppercase tracking-wider text-slate-500">
-                      Location
-                    </span>
-                    <span className="text-sm font-medium text-slate-700">
-                      {site.location}
-                    </span>
-                  </span>
-                </li>
-              </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* WhatsApp direct card */}
@@ -181,7 +192,7 @@ export default function Contact() {
                 <WhatsAppIcon className="h-6 w-6" />
               </span>
               <span>
-                <span className="block font-heading text-sm font-bold text-ink-950">
+                <span className="block font-heading text-sm font-bold text-slate-950">
                   Prefer WhatsApp?
                 </span>
                 <span className="text-sm text-slate-600">
@@ -195,7 +206,7 @@ export default function Contact() {
               <span className="font-heading text-xs uppercase tracking-wider text-slate-500">
                 Follow
               </span>
-              <span className="h-px flex-1 bg-electric/10" />
+              <span className="h-px flex-1 bg-slate-200" />
               {[
                 { label: "GitHub", href: socials.github, Icon: GitHubIcon },
                 { label: "LinkedIn", href: socials.linkedin, Icon: LinkedInIcon },
@@ -205,7 +216,6 @@ export default function Contact() {
                   href: socials.instagram,
                   Icon: InstagramIcon,
                 },
-                { label: "Facebook", href: socials.facebook, Icon: FacebookIcon },
               ].map(({ label, href, Icon }) => (
                 <a
                   key={label}
@@ -213,7 +223,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-ink-950/10 bg-white/80 text-slate-600 transition-all hover:-translate-y-0.5 hover:border-electric/50 hover:text-electric"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-all hover:-translate-y-0.5 hover:border-electric/50 hover:text-electric"
                 >
                   <Icon className="h-4 w-4" />
                 </a>
@@ -337,7 +347,7 @@ export default function Contact() {
                 <>
                   <span
                     aria-hidden="true"
-                    className="h-4 w-4 animate-spin rounded-full border-2 border-ink-950/30 border-t-ink-950"
+                    className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white"
                   />
                   Sending…
                 </>

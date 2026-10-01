@@ -29,11 +29,11 @@ export default function BlogIndexPage() {
         <section className="relative overflow-hidden py-20 sm:py-24">
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-hero-glow bg-grid-fade bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_20%,black,transparent)]"
+            className="absolute inset-0 bg-hero-glow bg-grid-fade bg-[size:56px_56px] opacity-80 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_20%,black,transparent)]"
           />
           <div className="section-shell relative">
             <span className="badge">Blog</span>
-            <h1 className="mt-4 font-heading text-4xl font-extrabold tracking-tight text-ink-950 sm:text-5xl">
+            <h1 className="mt-4 font-heading text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl">
               Thoughts on the <span className="gradient-text">modern web</span>
             </h1>
             <p className="mt-4 max-w-2xl leading-relaxed text-slate-600">
@@ -47,7 +47,7 @@ export default function BlogIndexPage() {
                   key={post.slug}
                   className="group glass flex flex-col overflow-hidden rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:border-electric/40 hover:shadow-glow"
                 >
-                  <div className="relative aspect-[16/9] overflow-hidden">
+                  <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
                     <Image
                       src={post.image}
                       alt={post.title}
@@ -55,7 +55,7 @@ export default function BlogIndexPage() {
                       sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <span className="absolute left-4 top-4 rounded-full border border-electric/30 bg-white/90 px-3 py-1 font-heading text-[11px] font-semibold uppercase tracking-wider text-electric backdrop-blur-md">
+                    <span className="absolute left-4 top-4 rounded-full border border-electric/25 bg-white/90 px-3 py-1 font-heading text-[11px] font-semibold uppercase tracking-wider text-electric shadow-sm backdrop-blur-md">
                       {post.category}
                     </span>
                   </div>
@@ -67,7 +67,7 @@ export default function BlogIndexPage() {
                         {post.readTime}
                       </span>
                     </div>
-                    <h2 className="mt-3 font-heading text-lg font-bold leading-snug text-ink-950 transition-colors group-hover:text-electric">
+                    <h2 className="mt-3 font-heading text-lg font-bold leading-snug text-slate-950 transition-colors group-hover:text-electric">
                       {post.title}
                     </h2>
                     <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-slate-600">
@@ -75,7 +75,7 @@ export default function BlogIndexPage() {
                     </p>
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="mt-5 inline-flex min-h-[44px] items-center gap-2 font-heading text-sm font-semibold text-electric hover:text-electric"
+                      className="mt-5 inline-flex min-h-[44px] items-center gap-2 font-heading text-sm font-semibold text-electric hover:text-brandBlue"
                     >
                       Read More
                       <ArrowRightIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

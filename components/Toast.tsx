@@ -63,17 +63,17 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
               transition={{ type: "spring", stiffness: 380, damping: 28 }}
               className={`toast ${
                 t.kind === "success"
-                  ? "border border-emerald-400/30 bg-white/95 text-emerald-200"
-                  : "border border-rose-400/30 bg-white/95 text-rose-200"
+                  ? "border border-emerald-200 bg-white text-emerald-700"
+                  : "border border-rose-200 bg-white text-rose-700"
               }`}
               role="status"
             >
               {t.kind === "success" ? (
-                <CheckCircleIcon className="mt-0.5 h-5 w-5 shrink-0 text-emerald-400" />
+                <CheckCircleIcon className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
               ) : (
-                <AlertCircleIcon className="mt-0.5 h-5 w-5 shrink-0 text-rose-400" />
+                <AlertCircleIcon className="mt-0.5 h-5 w-5 shrink-0 text-rose-500" />
               )}
-              <p className="text-sm leading-relaxed text-slate-800">
+              <p className="text-sm leading-relaxed text-slate-700">
                 {t.message}
               </p>
               <button
@@ -81,7 +81,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
                   setToasts((prev) => prev.filter((x) => x.id !== t.id))
                 }
                 aria-label="Dismiss notification"
-                className="ml-auto -mr-1 rounded-full p-1 text-slate-600 transition-colors hover:bg-electric/10 hover:text-ink-950"
+                className="ml-auto -mr-1 rounded-full p-1 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700"
               >
                 <svg
                   viewBox="0 0 24 24"

@@ -16,7 +16,6 @@ export default function WhatsAppWidget() {
   useEffect(() => setMounted(true), []);
 
   const handleClick = () => {
-    // Fire-and-forget analytics, then open WhatsApp in a new tab.
     try {
       const payload = JSON.stringify({
         referrer: document.referrer || "direct",
@@ -52,11 +51,11 @@ export default function WhatsAppWidget() {
       {/* pulsing rings */}
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 rounded-full bg-whatsapp/60 animate-pulse-ring"
+        className="pointer-events-none absolute inset-0 animate-pulse-ring rounded-full bg-whatsapp/60"
       />
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 rounded-full bg-whatsapp/40 animate-pulse-ring [animation-delay:1.1s]"
+        className="pointer-events-none absolute inset-0 animate-pulse-ring rounded-full bg-whatsapp/40 [animation-delay:1.1s]"
       />
 
       <a
@@ -65,12 +64,12 @@ export default function WhatsAppWidget() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with Wambete on WhatsApp"
-        className="group relative flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#2fe073] to-whatsappDark text-white shadow-[0_10px_35px_rgba(37,211,102,0.45)] transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_45px_rgba(37,211,102,0.65)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-whatsapp"
+        className="group relative flex h-16 w-16 items-center justify-center rounded-full bg-whatsapp text-white shadow-[0_10px_35px_rgba(37,211,102,0.35)] transition-all duration-300 hover:scale-105 hover:bg-whatsappDark hover:shadow-[0_10px_45px_rgba(37,211,102,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-whatsapp"
       >
         <WhatsAppIcon className="h-8 w-8 transition-transform duration-300 group-hover:scale-110" />
 
         {/* Expanding label (desktop) */}
-        <span className="pointer-events-none absolute right-full top-1/2 mr-4 hidden -translate-y-1/2 translate-x-3 whitespace-nowrap rounded-full border border-ink-950/10 bg-white/95 px-5 py-2.5 font-heading text-sm font-semibold text-ink-950 opacity-0 shadow-card backdrop-blur-xl transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 sm:block">
+        <span className="pointer-events-none absolute right-full top-1/2 mr-4 hidden -translate-y-1/2 translate-x-3 whitespace-nowrap rounded-full border border-slate-200 bg-white px-5 py-2.5 font-heading text-sm font-semibold text-slate-950 opacity-0 shadow-card backdrop-blur-xl transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 sm:block">
           Chat with me 💬
         </span>
       </a>

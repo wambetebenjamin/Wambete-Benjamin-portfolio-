@@ -67,14 +67,14 @@ export default function BlogPostPage({ params }: { params: Params }) {
           <div className="section-shell relative max-w-3xl">
             <Link
               href="/blog"
-              className="inline-flex min-h-[44px] items-center gap-2 text-sm font-medium text-electric transition-colors hover:text-electric"
+              className="inline-flex min-h-[44px] items-center gap-2 text-sm font-medium text-electric transition-colors hover:text-brandBlue"
             >
               <ArrowRightIcon className="h-4 w-4 rotate-180" />
               Back to all articles
             </Link>
 
             <span className="badge mt-6">{post.category}</span>
-            <h1 className="mt-4 font-heading text-3xl font-extrabold leading-tight tracking-tight text-ink-950 sm:text-4xl">
+            <h1 className="mt-4 font-heading text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-4xl">
               {post.title}
             </h1>
 
@@ -82,14 +82,14 @@ export default function BlogPostPage({ params }: { params: Params }) {
               <span className="flex items-center gap-2">
                 <span className="relative h-9 w-9 overflow-hidden rounded-full ring-2 ring-electric/40">
                   <Image
-                    src="/images/hero-avatar.jpg"
+                    src="/images/wambete-benjamin-square.jpg"
                     alt="Wambete Benjamin"
                     fill
                     sizes="36px"
                     className="object-cover"
                   />
                 </span>
-                <span className="font-medium text-slate-600">
+                <span className="font-medium text-slate-700">
                   {site.name}
                 </span>
               </span>
@@ -103,7 +103,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
               </span>
             </div>
 
-            <div className="relative mt-9 aspect-[16/9] overflow-hidden rounded-3xl border border-ink-950/10 shadow-card">
+            <div className="relative mt-9 aspect-[16/9] overflow-hidden rounded-3xl border border-slate-200 shadow-card">
               <Image
                 src={post.image}
                 alt={post.title}
@@ -118,8 +118,8 @@ export default function BlogPostPage({ params }: { params: Params }) {
               {post.body.map((paragraph, i) => (
                 <p
                   key={i}
-                  className={`leading-[1.85] text-slate-600 ${
-                    i === 0 ? "text-lg text-slate-700" : ""
+                  className={`leading-[1.85] text-slate-700 ${
+                    i === 0 ? "text-lg text-slate-800" : ""
                   }`}
                 >
                   {paragraph}
@@ -131,7 +131,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
             <div className="glass mt-14 flex flex-col items-start gap-5 rounded-3xl p-7 sm:flex-row sm:items-center">
               <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full ring-2 ring-electric/50">
                 <Image
-                  src="/images/hero-avatar.jpg"
+                  src="/images/wambete-benjamin-square.jpg"
                   alt="Wambete Benjamin"
                   fill
                   sizes="64px"
@@ -142,7 +142,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
                 <p className="font-heading text-sm font-bold uppercase tracking-wider text-electric">
                   Written by
                 </p>
-                <p className="mt-1 font-heading text-lg font-bold text-ink-950">
+                <p className="mt-1 font-heading text-lg font-bold text-slate-950">
                   {site.name}
                 </p>
                 <p className="mt-1 text-sm leading-relaxed text-slate-600">
@@ -158,7 +158,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
             {/* More articles */}
             {others.length > 0 && (
               <div className="mt-14">
-                <h2 className="font-heading text-xl font-bold text-ink-950">
+                <h2 className="font-heading text-xl font-bold text-slate-950">
                   Keep reading
                 </h2>
                 <div className="mt-6 grid gap-6 sm:grid-cols-2">
@@ -168,7 +168,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
                       href={`/blog/${p.slug}`}
                       className="group glass flex flex-col overflow-hidden rounded-3xl transition-all duration-300 hover:-translate-y-1 hover:border-electric/40"
                     >
-                      <div className="relative aspect-[16/9] overflow-hidden">
+                      <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
                         <Image
                           src={p.image}
                           alt={p.title}
@@ -181,7 +181,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
                         <span className="text-xs font-medium text-electric">
                           {p.category}
                         </span>
-                        <h3 className="mt-2 font-heading text-base font-bold leading-snug text-ink-950 group-hover:text-electric">
+                        <h3 className="mt-2 font-heading text-base font-bold leading-snug text-slate-950 group-hover:text-electric">
                           {p.title}
                         </h3>
                       </div>

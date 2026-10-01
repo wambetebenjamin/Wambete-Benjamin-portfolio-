@@ -32,7 +32,6 @@ export const socials = {
   linkedin: "https://www.linkedin.com/in/wambetebenjamin",
   twitter: "https://twitter.com/wambetebenjamin",
   instagram: "https://www.instagram.com/wambetebenjamin",
-  facebook: "https://www.facebook.com/wambete.benjamin.2025",
 };
 
 export const navLinks = [
@@ -159,6 +158,17 @@ export const projects: Project[] = [
   },
 ];
 
+export type Testimonial = {
+  name: string;
+  role: string;
+  quote: string;
+  rating: number;
+  avatar: string;
+};
+
+export const testimonials: Testimonial[] = [];
+
+
 export type Post = {
   slug: string;
   title: string;
@@ -180,7 +190,7 @@ export const posts: Post[] = [
     category: "Web Development",
     readTime: "8 min read",
     date: "2026-09-12",
-    image: "/images/blog-1.png",
+    image: "/images/wambete-benjamin-workspace.jpg",
     body: [
       "Every year the web platform gets a little more magical — and 2026 is no exception. The biggest shift isn't a single framework winning; it's the collapse of the distance between an idea and a deployed product. Edge runtimes, AI-assisted development and design-to-code tools are turning weeks of work into days.",
       "Edge-first is now the default architecture for new projects. Vercel, Cloudflare and Fastly all let you run full applications milliseconds away from your users, which means personalisation that used to require heavy client-side JavaScript now happens on the server without paying a latency tax.",
@@ -197,7 +207,7 @@ export const posts: Post[] = [
     category: "Performance",
     readTime: "6 min read",
     date: "2026-08-03",
-    image: "/images/blog-2.png",
+    image: "/images/wambete-benjamin-workspace.jpg",
     body: [
       "When a client came to me with a Next.js site scoring 54 on mobile Lighthouse, the fixes were less exotic than you'd expect. Performance work is mostly discipline: measure, fix the biggest cost, repeat.",
       "Images were the first villain — 3MB hero JPEGs served to every device. Moving to next/image with AVIF/WebP formats and proper sizes dropped the payload by 78% with zero visible quality loss.",
@@ -214,7 +224,7 @@ export const posts: Post[] = [
     category: "UI/UX Design",
     readTime: "5 min read",
     date: "2026-07-18",
-    image: "/images/blog-3.png",
+    image: "/images/wambete-benjamin-workspace.jpg",
     body: [
       "A design system is not a component library — it's a shared language. The library is just the dictionary. The real value is that designers and developers stop debating the same decisions and start shipping.",
       "Start with tokens: a small set of named decisions for color, spacing, typography and radii. Ten colors, a four-point spacing scale, three font sizes per breakpoint. If a token doesn't earn its place, cut it.",

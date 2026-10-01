@@ -17,7 +17,6 @@ export default function Navbar() {
     restDelta: 0.001,
   });
 
-  // Glass background after scrolling a bit
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
@@ -25,7 +24,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Scroll-spy: highlight the section currently in view
   useEffect(() => {
     const ids = navLinks.map((l) => l.href.slice(1));
     const observer = new IntersectionObserver(
@@ -43,7 +41,6 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, []);
 
-  // Lock body scroll when the drawer is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -55,14 +52,14 @@ export default function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-ink-950/10 bg-white/90 shadow-card backdrop-blur-xl"
-          : "bg-transparent"
+          ? "border-b border-slate-200/80 bg-white/90 shadow-card backdrop-blur-xl"
+          : "bg-white/70 backdrop-blur-sm"
       }`}
     >
       {/* Reading progress */}
       <motion.div
         style={{ scaleX: progress }}
-        className="absolute inset-x-0 top-0 h-[2px] origin-left bg-gradient-to-r from-electric via-gold to-electric"
+        className="absolute inset-x-0 top-0 h-[2px] origin-left bg-electric"
         aria-hidden="true"
       />
 
@@ -78,9 +75,7 @@ export default function Navbar() {
           <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-electric/40 bg-electric/10 text-sm font-extrabold text-electric transition-all group-hover:shadow-glow-sm">
             WB
           </span>
-          <span className="text-ink-950">
-            Wambete <span className="text-electric">Benjamin</span>
-          </span>
+          <span className="text-slate-950">Wambete Benjamin</span>
         </a>
 
         {/* Desktop links */}
@@ -96,7 +91,7 @@ export default function Navbar() {
                   className={`relative rounded-full px-4 py-2 font-heading text-sm font-medium transition-colors ${
                     isActive
                       ? "text-electric"
-                      : "text-slate-600 hover:text-ink-950"
+                      : "text-slate-700 hover:text-electric"
                   }`}
                 >
                   {link.label}
@@ -128,7 +123,7 @@ export default function Navbar() {
             onClick={() => setOpen(true)}
             aria-label="Open menu"
             aria-expanded={open}
-            className="flex h-12 w-12 items-center justify-center rounded-xl border border-ink-950/10 bg-white/80 text-ink-950 transition-colors hover:bg-electric/10 lg:hidden"
+            className="flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-950 shadow-sm transition-colors hover:bg-electric/10 lg:hidden"
           >
             <MenuIcon className="h-5 w-5" />
           </button>
@@ -144,7 +139,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setOpen(false)}
-              className="fixed inset-0 z-40 bg-ink-950/35 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-40 bg-slate-950/35 backdrop-blur-sm lg:hidden"
               aria-hidden="true"
             />
             <motion.aside
@@ -152,19 +147,19 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 320, damping: 32 }}
-              className="fixed right-0 top-0 z-50 flex h-dvh w-[78%] max-w-xs flex-col border-l border-ink-950/10 bg-white/95 backdrop-blur-2xl lg:hidden"
+              className="fixed right-0 top-0 z-50 flex h-dvh w-[78%] max-w-xs flex-col border-l border-slate-200 bg-white/95 backdrop-blur-2xl lg:hidden"
               role="dialog"
               aria-modal="true"
               aria-label="Mobile menu"
             >
-              <div className="flex items-center justify-between border-b border-ink-950/10 p-5">
-                <span className="font-heading text-lg font-bold text-ink-950">
-                  Wambete <span className="text-electric">Benjamin</span>
+              <div className="flex items-center justify-between border-b border-slate-200 p-5">
+                <span className="font-heading text-lg font-bold text-slate-950">
+                  Wambete Benjamin
                 </span>
                 <button
                   onClick={() => setOpen(false)}
                   aria-label="Close menu"
-                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-ink-950/10 bg-white/80 text-ink-950"
+                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-950"
                 >
                   <CloseIcon className="h-5 w-5" />
                 </button>
@@ -184,7 +179,7 @@ export default function Navbar() {
                       className={`flex min-h-[48px] items-center rounded-xl px-4 font-heading text-base font-medium transition-colors ${
                         active === link.href.slice(1)
                           ? "bg-electric/10 text-electric"
-                          : "text-slate-600 hover:bg-electric/10 hover:text-ink-950"
+                          : "text-slate-700 hover:bg-electric/10 hover:text-electric"
                       }`}
                     >
                       {link.label}
@@ -193,7 +188,7 @@ export default function Navbar() {
                 ))}
               </ul>
 
-              <div className="border-t border-ink-950/10 p-5">
+              <div className="border-t border-slate-200 p-5">
                 <a
                   href={HIRE_ME_URL}
                   target="_blank"

@@ -36,7 +36,7 @@ export default function Blog() {
               className="group glass flex flex-col overflow-hidden rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:border-electric/40 hover:shadow-glow"
             >
               {/* Cover */}
-              <div className="relative aspect-[16/9] overflow-hidden">
+              <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
                 <Image
                   src={post.image}
                   alt={post.title}
@@ -44,7 +44,7 @@ export default function Blog() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <span className="absolute left-4 top-4 rounded-full border border-electric/30 bg-white/90 px-3 py-1 font-heading text-[11px] font-semibold uppercase tracking-wider text-electric backdrop-blur-md">
+                <span className="absolute left-4 top-4 rounded-full border border-electric/25 bg-white/90 px-3 py-1 font-heading text-[11px] font-semibold uppercase tracking-wider text-electric shadow-sm backdrop-blur-md">
                   {post.category}
                 </span>
               </div>
@@ -59,7 +59,7 @@ export default function Blog() {
                   </span>
                 </div>
 
-                <h3 className="mt-3 font-heading text-lg font-bold leading-snug text-ink-950 transition-colors group-hover:text-electric">
+                <h3 className="mt-3 font-heading text-lg font-bold leading-snug text-slate-950 transition-colors group-hover:text-electric">
                   {post.title}
                 </h3>
                 <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-slate-600">
@@ -68,7 +68,7 @@ export default function Blog() {
 
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="mt-5 inline-flex min-h-[44px] items-center gap-2 font-heading text-sm font-semibold text-electric transition-colors hover:text-electric"
+                  className="mt-5 inline-flex min-h-[44px] items-center gap-2 font-heading text-sm font-semibold text-electric transition-colors hover:text-brandBlue"
                 >
                   Read More
                   <ArrowRightIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

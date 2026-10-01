@@ -74,7 +74,7 @@ export default function Particles({ className = "" }: { className?: string }) {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(0, 155, 183, 0.34)";
+        ctx.fillStyle = "rgba(0, 155, 183, 0.32)";
         ctx.fill();
       }
 

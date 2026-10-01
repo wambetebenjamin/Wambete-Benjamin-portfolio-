@@ -41,6 +41,7 @@ export const metadata: Metadata = {
     "React developer",
     "Next.js developer",
     "UI/UX designer Nairobi",
+    "Wambete Benjamin",
   ],
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,
@@ -76,7 +77,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#009BB7",
+  themeColor: "#f7fbfc",
   width: "device-width",
   initialScale: 1,
 };
