@@ -37,30 +37,27 @@ export default function Hero() {
       id="home"
       className="relative flex min-h-dvh items-center overflow-hidden pt-[72px]"
     >
-      {/* Particle network background */}
       <Particles />
 
-      {/* Ambient glows + grid */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-hero-glow bg-grid-fade bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_40%,black,transparent)]"
+        className="absolute inset-0 bg-hero-glow bg-grid-fade bg-[size:56px_56px] opacity-80 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_40%,black,transparent)]"
       />
 
-      <div className="section-shell relative z-10 grid items-center gap-14 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
-        {/* ── Copy ── */}
+      <div className="section-shell relative z-10 grid items-center gap-14 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
         <div className="text-center lg:text-left">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             custom={0.05}
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-electric/30 bg-electric/10 px-4 py-1.5 font-heading text-xs font-medium text-electric-200"
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-electric/25 bg-white/85 px-4 py-1.5 font-heading text-xs font-semibold text-electric shadow-sm"
           >
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-electric opacity-60" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-electric opacity-50" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-electric" />
             </span>
-            Available for freelance & full-time roles
+            Available for freelance & full time roles
           </motion.div>
 
           <motion.p
@@ -68,9 +65,9 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             custom={0.15}
-            className="font-heading text-lg font-medium text-slate-300"
+            className="font-heading text-lg font-medium text-slate-700"
           >
-            👋 Hi, I&apos;m <span className="text-white">Wambete Benjamin</span>
+            Hi, I&apos;m <span className="text-slate-950">Wambete Benjamin</span>
           </motion.p>
 
           <motion.h1
@@ -78,7 +75,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             custom={0.25}
-            className="mt-3 font-heading text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl xl:text-6xl"
+            className="mt-3 font-heading text-4xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-5xl xl:text-6xl"
           >
             I&apos;m a
             <br className="sm:hidden" />{" "}
@@ -93,14 +90,13 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             custom={0.35}
-            className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-400 sm:text-lg lg:mx-0"
+            className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg lg:mx-0"
           >
-            Based in <span className="text-electric">Nairobi, Kenya</span> 🇰🇪, I
-            design and build fast, beautiful web applications — from pixel-perfect
+            Based in <span className="font-semibold text-electric">Nairobi, Kenya</span>, I
+            design and build fast, beautiful web applications, from pixel perfect
             interfaces to robust APIs and databases.
           </motion.p>
 
-          {/* CTAs */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -122,7 +118,6 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          {/* Socials */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -130,7 +125,7 @@ export default function Hero() {
             custom={0.55}
             className="mt-9 flex items-center justify-center gap-3 lg:justify-start"
           >
-            <span className="hidden h-px w-10 bg-gradient-to-r from-electric/60 to-transparent sm:block" />
+            <span className="hidden h-px w-10 bg-electric/40 sm:block" />
             {socialLinks.map(({ label, href, Icon }) => (
               <a
                 key={label}
@@ -138,7 +133,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${label} profile`}
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-electric/50 hover:text-electric hover:shadow-glow-sm"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-electric/50 hover:text-electric hover:shadow-glow-sm"
               >
                 <Icon className="h-5 w-5" />
               </a>
@@ -146,40 +141,52 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* ── Avatar ── */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.85 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mx-auto w-64 sm:w-72 lg:w-full lg:max-w-sm"
+          className="relative mx-auto h-[540px] w-full max-w-md sm:h-[620px] lg:h-[650px]"
         >
-          {/* orbit ring */}
-          <div
-            aria-hidden="true"
-            className="absolute -inset-8 animate-spin-slow rounded-full border border-dashed border-electric/30 sm:-inset-10"
-          >
-            <span className="absolute -top-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-electric shadow-glow-sm" />
-          </div>
-
-          <div className="glow-frame relative aspect-square overflow-hidden rounded-[2.5rem] border border-electric/30">
+          <div className="absolute left-0 top-16 hidden h-72 w-44 -rotate-6 overflow-hidden rounded-[2rem] border border-white bg-white shadow-card sm:block">
             <Image
-              src="/images/hero-avatar.jpg"
-              alt="Wambete Benjamin — Full-Stack Web Developer"
+              src="/images/wambete-benjamin-bridge.jpg"
+              alt="Wambete Benjamin on a bridge"
               fill
-              priority
-              sizes="(max-width: 1024px) 288px, 384px"
-              className="z-10 object-cover"
+              sizes="176px"
+              className="object-cover object-top"
             />
           </div>
 
-          {/* Floating chips */}
+          <div className="absolute bottom-16 right-0 hidden h-72 w-44 rotate-6 overflow-hidden rounded-[2rem] border border-white bg-white shadow-card sm:block">
+            <Image
+              src="/images/wambete-benjamin-street.jpg"
+              alt="Wambete Benjamin street portrait"
+              fill
+              sizes="176px"
+              className="object-cover object-top"
+            />
+          </div>
+
+          <div className="glow-frame relative z-10 mx-auto h-full w-[76%] max-w-[310px] overflow-hidden rounded-[2.5rem] border border-electric/30 bg-white p-2 shadow-card sm:max-w-[350px]">
+            <div className="relative h-full overflow-hidden rounded-[2rem] bg-slate-100">
+              <Image
+                src="/images/wambete-benjamin-garden.jpg"
+                alt="Wambete Benjamin | Full Stack Web Developer"
+                fill
+                priority
+                sizes="(max-width: 1024px) 76vw, 350px"
+                className="object-cover object-top"
+              />
+            </div>
+          </div>
+
           <motion.div
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="glass absolute -left-6 top-10 z-20 hidden rounded-2xl px-4 py-3 sm:block"
+            className="glass absolute -left-2 top-8 z-20 hidden rounded-2xl px-4 py-3 sm:block lg:-left-4"
           >
             <p className="font-heading text-lg font-bold text-electric">5+</p>
-            <p className="text-xs text-slate-400">Years Experience</p>
+            <p className="text-xs text-slate-600">Years Experience</p>
           </motion.div>
           <motion.div
             animate={{ y: [0, 12, 0] }}
@@ -189,18 +196,17 @@ export default function Hero() {
               ease: "easeInOut",
               delay: 1,
             }}
-            className="glass absolute -right-4 bottom-12 z-20 hidden rounded-2xl px-4 py-3 sm:block"
+            className="glass absolute -right-2 bottom-24 z-20 hidden rounded-2xl px-4 py-3 sm:block lg:-right-4"
           >
             <p className="font-heading text-lg font-bold text-electric">50+</p>
-            <p className="text-xs text-slate-400">Projects Delivered</p>
+            <p className="text-xs text-slate-600">Projects Delivered</p>
           </motion.div>
 
-          {/* Quick WhatsApp chip */}
           <a
             href={WHATSAPP_WIDGET_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="glass absolute -bottom-5 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full px-5 py-2.5 font-heading text-sm font-medium text-white transition-colors hover:text-electric"
+            className="glass absolute bottom-2 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full px-5 py-2.5 font-heading text-sm font-medium text-slate-950 transition-colors hover:text-electric"
           >
             <WhatsAppIcon className="h-4 w-4 text-whatsapp" />
             Let&apos;s build together
@@ -208,7 +214,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll cue */}
       <motion.a
         href="#about"
         aria-label="Scroll to About section"

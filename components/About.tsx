@@ -25,7 +25,6 @@ function Counter({ value, suffix }: { value: number; suffix?: string }) {
     let raf = 0;
     const tick = (now: number) => {
       const t = Math.min(1, (now - start) / duration);
-      // easeOutExpo for a satisfying finish
       const eased = t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
       setDisplay(Math.round(eased * value));
       if (t < 1) raf = requestAnimationFrame(tick);
@@ -43,8 +42,8 @@ function Counter({ value, suffix }: { value: number; suffix?: string }) {
 }
 
 const bioParagraphs = [
-  "I'm Wambete Benjamin, a full-stack web developer from Nairobi with 5+ years of experience turning ideas into polished digital products. I care deeply about the details — clean architecture, fast load times and interfaces that feel effortless.",
-  "My toolkit spans the whole stack: React and Next.js on the front, Node.js, Python and MongoDB on the back, with a healthy obsession for UI/UX design in between. From e-commerce platforms to AI-powered SaaS, I've shipped 50+ projects for clients across Kenya and beyond.",
+  "I'm Wambete Benjamin, a full stack web developer from Nairobi with 5+ years of experience turning ideas into polished digital products. I care deeply about the details like clean architecture, fast load times and interfaces that feel effortless.",
+  "My toolkit spans the whole stack: React and Next.js on the front, Node.js, Python and MongoDB on the back, with a healthy obsession for UI/UX design in between. From ecommerce platforms to AI powered SaaS, I've shipped 50+ projects for clients across Kenya and beyond.",
   "When I'm not coding, you'll find me mentoring junior developers, writing about the web, or exploring Nairobi's coffee scene. Got a project in mind? Let's make it real.",
 ];
 
@@ -60,7 +59,7 @@ export default function About() {
         />
 
         <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-          {/* ── Image frame with glow ── */}
+          {/* ── Image frame ── */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -68,21 +67,21 @@ export default function About() {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="relative mx-auto w-full max-w-md"
           >
-            <div className="glow-frame relative aspect-[4/5] overflow-hidden rounded-[2rem] border-2 border-electric/40">
+            <div className="glow-frame relative aspect-[9/16] overflow-hidden rounded-[2rem] border-2 border-electric/25 bg-white shadow-card">
               <Image
-                src="/images/about-portrait.jpg"
-                alt="Wambete Benjamin working on a laptop"
+                src="/images/wambete-benjamin-bridge.jpg"
+                alt="Wambete Benjamin professional portrait"
                 fill
                 sizes="(max-width: 1024px) 90vw, 420px"
-                className="z-10 object-cover"
+                className="z-10 object-cover object-top"
               />
               {/* caption bar */}
-              <div className="absolute inset-x-0 bottom-0 z-20 border-t border-white/10 bg-gradient-to-t from-ink-950/95 to-transparent p-5 pt-10">
-                <p className="font-heading text-sm font-semibold text-white">
+              <div className="absolute inset-x-0 bottom-0 z-20 border-t border-slate-200/70 bg-white/90 p-5 backdrop-blur-md">
+                <p className="font-heading text-sm font-semibold text-slate-950">
                   Wambete Benjamin
                 </p>
-                <p className="text-xs text-electric">
-                  Full-Stack Developer · Nairobi
+                <p className="text-xs font-semibold text-electric">
+                  Full Stack Developer · Nairobi
                 </p>
               </div>
             </div>
@@ -90,7 +89,7 @@ export default function About() {
             {/* corner accents */}
             <span
               aria-hidden="true"
-              className="absolute -left-3 -top-3 h-14 w-14 rounded-tl-[2rem] border-l-4 border-t-4 border-electric"
+              className="absolute -left-3 -top-3 h-14 w-14 rounded-tl-[2rem] border-l-4 border-t-4 border-brandAmber"
             />
             <span
               aria-hidden="true"
@@ -105,27 +104,31 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h3 className="font-heading text-2xl font-bold text-white sm:text-3xl">
+            <h3 className="font-heading text-2xl font-bold text-slate-950 sm:text-3xl">
               Building the web, one pixel{" "}
               <span className="gradient-text">& one API</span> at a time
             </h3>
 
             {bioParagraphs.map((p, i) => (
-              <p key={i} className="mt-5 leading-relaxed text-slate-400">
+              <p key={i} className="mt-5 leading-relaxed text-slate-600">
                 {p}
               </p>
             ))}
 
             {/* Meta chips */}
             <div className="mt-6 flex flex-wrap gap-3">
-              <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-slate-300">
+              <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-slate-700">
                 <MapPinIcon className="h-4 w-4 text-electric" />
                 {site.location}
               </span>
-              <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-slate-300">
+              <a
+                href={`mailto:${site.email}`}
+                aria-label="Email Wambete Benjamin"
+                className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-slate-700 transition-colors hover:text-electric"
+              >
                 <MailIcon className="h-4 w-4 text-electric" />
-                {site.email}
-              </span>
+                Email me
+              </a>
             </div>
 
             {/* Counters */}
@@ -142,7 +145,7 @@ export default function About() {
                   <p className="font-heading text-3xl font-extrabold text-electric sm:text-4xl">
                     <Counter value={s.value} suffix={s.suffix} />
                   </p>
-                  <p className="mt-1 text-[11px] text-slate-400 sm:text-xs">
+                  <p className="mt-1 text-[11px] text-slate-600 sm:text-xs">
                     {s.label}
                   </p>
                 </motion.div>

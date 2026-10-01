@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
+import Logo from "@/components/Logo";
 import { navLinks, HIRE_ME_URL } from "@/lib/site";
 import { CloseIcon, MenuIcon, WhatsAppIcon } from "@/components/icons";
 
@@ -17,7 +18,6 @@ export default function Navbar() {
     restDelta: 0.001,
   });
 
-  // Glass background after scrolling a bit
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
@@ -25,7 +25,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Scroll-spy: highlight the section currently in view
   useEffect(() => {
     const ids = navLinks.map((l) => l.href.slice(1));
     const observer = new IntersectionObserver(
@@ -43,7 +42,6 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, []);
 
-  // Lock body scroll when the drawer is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -55,14 +53,14 @@ export default function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-white/5 bg-ink-950/80 shadow-card backdrop-blur-xl"
-          : "bg-transparent"
+          ? "border-b border-slate-200/80 bg-white/90 shadow-card backdrop-blur-xl"
+          : "bg-white/70 backdrop-blur-sm"
       }`}
     >
       {/* Reading progress */}
       <motion.div
         style={{ scaleX: progress }}
-        className="absolute inset-x-0 top-0 h-[2px] origin-left bg-gradient-to-r from-electric via-sky-400 to-electric"
+        className="absolute inset-x-0 top-0 h-[2px] origin-left bg-electric"
         aria-hidden="true"
       />
 
@@ -70,17 +68,8 @@ export default function Navbar() {
         className="section-shell flex h-[72px] items-center justify-between"
         aria-label="Main navigation"
       >
-        {/* Logo */}
-        <a
-          href="#home"
-          className="group flex items-center gap-2 font-heading text-xl font-bold tracking-tight"
-        >
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-electric/40 bg-electric/10 text-sm font-extrabold text-electric transition-all group-hover:shadow-glow-sm">
-            AM
-          </span>
-          <span className="text-white">
-            AM<span className="text-electric"> Dev</span>
-          </span>
+        <a href="#home" className="group" aria-label="Wambete Benjamin home">
+          <Logo markClassName="h-11 w-11 transition-transform duration-300 group-hover:scale-105" />
         </a>
 
         {/* Desktop links */}
@@ -96,7 +85,7 @@ export default function Navbar() {
                   className={`relative rounded-full px-4 py-2 font-heading text-sm font-medium transition-colors ${
                     isActive
                       ? "text-electric"
-                      : "text-slate-300 hover:text-white"
+                      : "text-slate-700 hover:text-electric"
                   }`}
                 >
                   {link.label}
@@ -128,7 +117,7 @@ export default function Navbar() {
             onClick={() => setOpen(true)}
             aria-label="Open menu"
             aria-expanded={open}
-            className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white transition-colors hover:bg-white/10 lg:hidden"
+            className="flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-950 shadow-sm transition-colors hover:bg-electric/10 lg:hidden"
           >
             <MenuIcon className="h-5 w-5" />
           </button>
@@ -144,7 +133,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setOpen(false)}
-              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-40 bg-slate-950/35 backdrop-blur-sm lg:hidden"
               aria-hidden="true"
             />
             <motion.aside
@@ -152,19 +141,17 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 320, damping: 32 }}
-              className="fixed right-0 top-0 z-50 flex h-dvh w-[78%] max-w-xs flex-col border-l border-white/10 bg-ink-900/95 backdrop-blur-2xl lg:hidden"
+              className="fixed right-0 top-0 z-50 flex h-dvh w-[78%] max-w-xs flex-col border-l border-slate-200 bg-white/95 backdrop-blur-2xl lg:hidden"
               role="dialog"
               aria-modal="true"
               aria-label="Mobile menu"
             >
-              <div className="flex items-center justify-between border-b border-white/10 p-5">
-                <span className="font-heading text-lg font-bold text-white">
-                  AM<span className="text-electric"> Dev</span>
-                </span>
+              <div className="flex items-center justify-between border-b border-slate-200 p-5">
+                <Logo markClassName="h-10 w-10" textClassName="font-heading text-lg font-bold text-slate-950" />
                 <button
                   onClick={() => setOpen(false)}
                   aria-label="Close menu"
-                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white"
+                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-950"
                 >
                   <CloseIcon className="h-5 w-5" />
                 </button>
@@ -184,7 +171,7 @@ export default function Navbar() {
                       className={`flex min-h-[48px] items-center rounded-xl px-4 font-heading text-base font-medium transition-colors ${
                         active === link.href.slice(1)
                           ? "bg-electric/10 text-electric"
-                          : "text-slate-300 hover:bg-white/5 hover:text-white"
+                          : "text-slate-700 hover:bg-electric/10 hover:text-electric"
                       }`}
                     >
                       {link.label}
@@ -193,7 +180,7 @@ export default function Navbar() {
                 ))}
               </ul>
 
-              <div className="border-t border-white/10 p-5">
+              <div className="border-t border-slate-200 p-5">
                 <a
                   href={HIRE_ME_URL}
                   target="_blank"

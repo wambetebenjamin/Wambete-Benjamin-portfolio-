@@ -35,13 +35,13 @@ export const metadata: Metadata = {
   description: site.description,
   keywords: [
     "Wambete Benjamin",
-    "full-stack developer",
+    "full stack developer",
     "web developer Kenya",
     "Nairobi web developer",
     "React developer",
     "Next.js developer",
     "UI/UX designer Nairobi",
-    "AM Dev",
+    "Wambete Benjamin",
   ],
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Wambete Benjamin — Full-Stack Web Developer",
+        alt: "Wambete Benjamin | Full Stack Web Developer",
       },
     ],
   },
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#05070d",
+  themeColor: "#f7fbfc",
   width: "device-width",
   initialScale: 1,
 };
@@ -86,9 +86,8 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: site.name,
-  jobTitle: "Full-Stack Web Developer",
+  jobTitle: "Full Stack Web Developer",
   url: site.url,
-  email: site.email,
   telephone: site.phoneHref,
   address: {
     "@type": "PostalAddress",
@@ -114,7 +113,7 @@ export default function RootLayout({
       <body>
         <ToastProvider>
           {children}
-          {/* Visitor won't see this — search engines will. */}
+          {/* Visitor won't see this. Search engines will. */}
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}

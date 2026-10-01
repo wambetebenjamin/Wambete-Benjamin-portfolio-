@@ -10,7 +10,7 @@ export default function Skills() {
       {/* ambient glow */}
       <div
         aria-hidden="true"
-        className="absolute left-1/2 top-0 h-72 w-[42rem] max-w-full -translate-x-1/2 rounded-full bg-electric/5 blur-3xl"
+        className="absolute left-1/2 top-0 h-72 w-[42rem] max-w-full -translate-x-1/2 rounded-full bg-electric/10 blur-3xl"
       />
 
       <div className="section-shell relative">
@@ -31,8 +31,10 @@ export default function Skills() {
               transition={{ delay: 0.05 * (i % 4), duration: 0.5 }}
             >
               <div className="mb-2 flex items-center justify-between">
-                <span className="flex items-center gap-2 font-heading text-sm font-semibold text-slate-200">
-                  <span aria-hidden="true">{skill.icon}</span>
+                <span className="flex items-center gap-2 font-heading text-sm font-semibold text-slate-800">
+                  <span className="rounded-full bg-electric/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-electric">
+                    {skill.icon}
+                  </span>
                   {skill.name}
                 </span>
                 <span className="font-heading text-sm font-bold text-electric">
@@ -41,7 +43,7 @@ export default function Skills() {
               </div>
 
               <div
-                className="h-3 overflow-hidden rounded-full border border-white/10 bg-ink-800"
+                className="h-3 overflow-hidden rounded-full border border-slate-200 bg-slate-100"
                 role="progressbar"
                 aria-valuenow={skill.level}
                 aria-valuemin={0}
@@ -80,7 +82,7 @@ export default function Skills() {
               {[...otherTools, ...otherTools].map((tool, i) => (
                 <span
                   key={`${tool}-${i}`}
-                  className="glass whitespace-nowrap rounded-full px-5 py-2.5 font-heading text-sm font-medium text-slate-300"
+                  className="glass whitespace-nowrap rounded-full px-5 py-2.5 font-heading text-sm font-medium text-slate-700"
                 >
                   {tool}
                 </span>

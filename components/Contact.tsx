@@ -1,12 +1,12 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/SectionHeading";
 import { useToast } from "@/components/Toast";
 import { site, socials, HIRE_ME_URL } from "@/lib/site";
 import {
-  FacebookIcon,
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
@@ -21,7 +21,7 @@ import {
 type Status = "idle" | "sending";
 
 const inputClasses =
-  "min-h-[48px] w-full rounded-xl border border-white/10 bg-ink-800/80 px-4 py-3 text-sm text-white placeholder-slate-500 outline-none backdrop-blur transition-all duration-300 focus:border-electric/60 focus:bg-ink-800 focus:shadow-glow-sm";
+  "min-h-[48px] w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-950 placeholder-slate-400 outline-none shadow-sm transition-all duration-300 focus:border-electric/60 focus:bg-white focus:shadow-glow-sm";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -58,7 +58,7 @@ export default function Contact() {
         toast(
           data.mode === "logged"
             ? "Message received! I'll get back to you within 24 hours."
-            : "Message sent successfully! I'll get back to you within 24 hours. 🚀",
+            : "Message sent successfully! I'll get back to you within 24 hours.",
           "success",
         );
         setForm({
@@ -76,7 +76,7 @@ export default function Contact() {
       }
     } catch {
       toast(
-        "Network error — please check your connection and try again.",
+        "Network error. Please check your connection and try again.",
         "error",
       );
     } finally {
@@ -88,7 +88,7 @@ export default function Contact() {
     <section id="contact" className="relative scroll-mt-24 py-24 sm:py-28">
       <div
         aria-hidden="true"
-        className="absolute bottom-0 left-1/2 h-80 w-[46rem] max-w-full -translate-x-1/2 rounded-full bg-electric/5 blur-3xl"
+        className="absolute bottom-0 left-1/2 h-80 w-[46rem] max-w-full -translate-x-1/2 rounded-full bg-electric/10 blur-3xl"
       />
 
       <div className="section-shell relative">
@@ -108,66 +108,96 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="flex flex-col gap-5"
           >
-            <div className="glass rounded-3xl p-7">
-              <h3 className="font-heading text-xl font-bold text-white">
-                Contact information
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-400">
-                Based in Nairobi, working with clients worldwide. Average reply
-                time: under 24 hours.
-              </p>
+            <div className="glass overflow-hidden rounded-3xl">
+              <div className="relative isolate min-h-[430px] overflow-hidden bg-electric/5 p-5">
+                <div className="absolute right-5 top-6 hidden h-56 w-36 rotate-6 overflow-hidden rounded-[1.5rem] border border-white bg-white shadow-card sm:block">
+                  <Image
+                    src="/images/wambete-benjamin-city.jpg"
+                    alt="Wambete Benjamin city portrait"
+                    fill
+                    sizes="144px"
+                    className="object-cover object-top"
+                  />
+                </div>
+                <div className="relative z-10 mx-auto h-[390px] w-[220px] overflow-hidden rounded-[2rem] border border-white bg-white shadow-card">
+                  <Image
+                    src="/images/wambete-benjamin-rooftop.jpg"
+                    alt="Wambete Benjamin rooftop portrait"
+                    fill
+                    sizes="220px"
+                    className="object-cover object-top"
+                  />
+                </div>
+                <div className="glass absolute bottom-5 left-5 z-20 max-w-[220px] rounded-2xl px-4 py-3">
+                  <p className="font-heading text-sm font-bold text-slate-950">
+                    Nairobi based
+                  </p>
+                  <p className="text-xs text-slate-600">
+                    Available for web projects and collaborations.
+                  </p>
+                </div>
+              </div>
+              <div className="p-7">
+                <h3 className="font-heading text-xl font-bold text-slate-950">
+                  Contact information
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                  Based in Nairobi, working with clients worldwide. Average reply
+                  time: under 24 hours.
+                </p>
 
-              <ul className="mt-7 flex flex-col gap-5">
-                <li>
-                  <a
-                    href={`mailto:${site.email}`}
-                    className="group flex items-center gap-4"
-                  >
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-electric/30 bg-electric/10 text-electric transition-all group-hover:shadow-glow-sm">
-                      <MailIcon className="h-5 w-5" />
+                <ul className="mt-7 flex flex-col gap-5">
+                  <li>
+                    <a
+                      href={`mailto:${site.email}`}
+                      className="group flex items-center gap-4"
+                    >
+                      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-electric/25 bg-electric/10 text-electric transition-all group-hover:shadow-glow-sm">
+                        <MailIcon className="h-5 w-5" />
+                      </span>
+                      <span>
+                        <span className="block text-xs uppercase tracking-wider text-slate-500">
+                          Email
+                        </span>
+                        <span className="text-sm font-medium text-slate-800 transition-colors group-hover:text-electric">
+                          Email me
+                        </span>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href={`tel:${site.phoneHref}`}
+                      className="group flex items-center gap-4"
+                    >
+                      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-electric/25 bg-electric/10 text-electric transition-all group-hover:shadow-glow-sm">
+                        <PhoneIcon className="h-5 w-5" />
+                      </span>
+                      <span>
+                        <span className="block text-xs uppercase tracking-wider text-slate-500">
+                          Phone / WhatsApp
+                        </span>
+                        <span className="text-sm font-medium text-slate-800 transition-colors group-hover:text-electric">
+                          {site.phone}
+                        </span>
+                      </span>
+                    </a>
+                  </li>
+                  <li className="flex items-center gap-4">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-electric/25 bg-electric/10 text-electric">
+                      <MapPinIcon className="h-5 w-5" />
                     </span>
                     <span>
                       <span className="block text-xs uppercase tracking-wider text-slate-500">
-                        Email
+                        Location
                       </span>
-                      <span className="text-sm font-medium text-slate-200 transition-colors group-hover:text-electric">
-                        {site.email}
-                      </span>
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`tel:${site.phoneHref}`}
-                    className="group flex items-center gap-4"
-                  >
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-electric/30 bg-electric/10 text-electric transition-all group-hover:shadow-glow-sm">
-                      <PhoneIcon className="h-5 w-5" />
-                    </span>
-                    <span>
-                      <span className="block text-xs uppercase tracking-wider text-slate-500">
-                        Phone / WhatsApp
-                      </span>
-                      <span className="text-sm font-medium text-slate-200 transition-colors group-hover:text-electric">
-                        {site.phone}
+                      <span className="text-sm font-medium text-slate-800">
+                        {site.location}
                       </span>
                     </span>
-                  </a>
-                </li>
-                <li className="flex items-center gap-4">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-electric/30 bg-electric/10 text-electric">
-                    <MapPinIcon className="h-5 w-5" />
-                  </span>
-                  <span>
-                    <span className="block text-xs uppercase tracking-wider text-slate-500">
-                      Location
-                    </span>
-                    <span className="text-sm font-medium text-slate-200">
-                      {site.location}
-                    </span>
-                  </span>
-                </li>
-              </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* WhatsApp direct card */}
@@ -181,11 +211,11 @@ export default function Contact() {
                 <WhatsAppIcon className="h-6 w-6" />
               </span>
               <span>
-                <span className="block font-heading text-sm font-bold text-white">
+                <span className="block font-heading text-sm font-bold text-slate-950">
                   Prefer WhatsApp?
                 </span>
-                <span className="text-sm text-slate-400">
-                  Chat with me instantly — usually replies in minutes.
+                <span className="text-sm text-slate-600">
+                  Chat with me instantly   usually replies in minutes.
                 </span>
               </span>
             </a>
@@ -195,7 +225,7 @@ export default function Contact() {
               <span className="font-heading text-xs uppercase tracking-wider text-slate-500">
                 Follow
               </span>
-              <span className="h-px flex-1 bg-white/10" />
+              <span className="h-px flex-1 bg-slate-200" />
               {[
                 { label: "GitHub", href: socials.github, Icon: GitHubIcon },
                 { label: "LinkedIn", href: socials.linkedin, Icon: LinkedInIcon },
@@ -205,7 +235,6 @@ export default function Contact() {
                   href: socials.instagram,
                   Icon: InstagramIcon,
                 },
-                { label: "Facebook", href: socials.facebook, Icon: FacebookIcon },
               ].map(({ label, href, Icon }) => (
                 <a
                   key={label}
@@ -213,7 +242,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-400 transition-all hover:-translate-y-0.5 hover:border-electric/50 hover:text-electric"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-all hover:-translate-y-0.5 hover:border-electric/50 hover:text-electric"
                 >
                   <Icon className="h-4 w-4" />
                 </a>
@@ -235,7 +264,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="name"
-                  className="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-slate-400"
+                  className="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-slate-600"
                 >
                   Name <span className="text-electric">*</span>
                 </label>
@@ -256,7 +285,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="email"
-                  className="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-slate-400"
+                  className="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-slate-600"
                 >
                   Email <span className="text-electric">*</span>
                 </label>
@@ -277,7 +306,7 @@ export default function Contact() {
             <div className="mt-5">
               <label
                 htmlFor="subject"
-                className="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-slate-400"
+                className="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-slate-600"
               >
                 Subject
               </label>
@@ -296,7 +325,7 @@ export default function Contact() {
             <div className="mt-5">
               <label
                 htmlFor="message"
-                className="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-slate-400"
+                className="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-slate-600"
               >
                 Message <span className="text-electric">*</span>
               </label>
@@ -307,14 +336,14 @@ export default function Contact() {
                 minLength={10}
                 maxLength={4000}
                 rows={6}
-                placeholder="Tell me about your project — goals, timeline, budget…"
+                placeholder="Tell me about your project, goals, timeline, budget…"
                 value={form.message}
                 onChange={set("message")}
                 className={`${inputClasses} min-h-[150px] resize-y`}
               />
             </div>
 
-            {/* Honeypot — invisible to humans, catnip for bots */}
+            {/* Honeypot   invisible to humans, catnip for bots */}
             <div className="absolute -left-[9999px]" aria-hidden="true">
               <label htmlFor="website">Website</label>
               <input
@@ -337,7 +366,7 @@ export default function Contact() {
                 <>
                   <span
                     aria-hidden="true"
-                    className="h-4 w-4 animate-spin rounded-full border-2 border-ink-950/30 border-t-ink-950"
+                    className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white"
                   />
                   Sending…
                 </>

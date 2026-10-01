@@ -29,7 +29,7 @@ export default function SectionHeading({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.55, delay: 0.08 }}
-        className="mt-4 font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl"
+        className="mt-4 font-heading text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl"
       >
         {title} {highlight && <span className="gradient-text">{highlight}</span>}
       </motion.h2>
@@ -39,7 +39,7 @@ export default function SectionHeading({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.55, delay: 0.16 }}
-          className="mt-4 leading-relaxed text-slate-400"
+          className="mt-4 leading-relaxed text-slate-600"
         >
           {description}
         </motion.p>
